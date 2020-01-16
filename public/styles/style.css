@@ -1,0 +1,15 @@
+.nocolor{
+    background-color: rgba(254, 254, 254, 0));
+    color:white;
+}
+
+.background {
+    background: url(tesla-cybertruck.jpg) no-repeat center center fixed; 
+    background-size: cover;
+    width:100vw;
+    height:100vh;
+    padding:2vmin;
+    margin:auto;
+    background-color: black;
+    position: relative;
+  }
