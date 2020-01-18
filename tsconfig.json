@@ -1,11 +1,12 @@
 {
     "compilerOptions": {
-        "module": "system",
+        "module": "commonjs",
         "noImplicitAny": false,
         "removeComments": true,
         "preserveConstEnums": true,
         "outDir": "./built"
-        // "outFile": "./built/local/tsc.js",
+        //"allowSyntheticDefaultImports": true
+        //"outFile": "./built/local/tsc.js"
         // "sourceMap": true
     },
     "include": [
