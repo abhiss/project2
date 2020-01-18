@@ -8,11 +8,11 @@
     "lint": "eslint --quiet .",
     "fix": "eslint --fix .",
     "test": "npm run lint"
-    
   },
-
   "license": "ISC",
   "dependencies": {
+    "@types/node": "^13.1.7",
+    "@types/sequelize": "^4.28.8",
     "dotenv": "^8.0.0",
     "express": "^4.17.0",
     "express-handlebars": "^3.1.0",
