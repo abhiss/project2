@@ -1,3 +1,5 @@
-import {app} from '../server'
 
-console.log("this ran")
+export default function(app, path){
+    console.log('this ran');
+  
+}
