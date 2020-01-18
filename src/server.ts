@@ -10,12 +10,12 @@ app.use(express.json());
 app.use(express.static(__dirname + './public'));
 
 
-app.get('/',function(req, res){
+app.get('/', function (req, res) {
   console.log("got get request /")
   res.send('hey you')
 })
 
-app.listen(PORT, function() {
+app.listen(PORT, function () {
   console.log("Server listening on port: " + PORT);
 });
 
