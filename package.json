@@ -11,7 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "dotenv": "^8.2.0",
-    "express": "^4.17.0"
+    "express": "^4.17.0",
+    "recorder-js": "^1.0.7"
   },
   "devDependencies": {
     "cross-env": "^5.2.0",
