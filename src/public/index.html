@@ -23,30 +23,64 @@
 </head>
 
 <body>
-
+    <div id="nav_bar_container">
+        <nav class="nav_bar">
+            <p></p>
+            <p><img src="images/mail_icon.png" alt="mail" class="mail_icon"></p>
+        </nav>
+        <div>
+            <p class="title">Hey You</p>
+            <p class="sub_title">How are you feeling?</p>
+        </div>
+    </div>
     <!-- Swiper -->
     <div class="swiper-container">
         <div class="swiper-wrapper">
             <div class="swiper-slide slide1">
-                <nav class="nav_bar">
-                    <p></p>
-                    <p><img src="images/mail_icon.png" alt="mail" class="mail_icon"></p>
-                </nav>
-                <div>
-                    <p class="title">Hey You</p>
-                </div>
-                <div>
-                    <p class="sub_title">How are you feeling?</p>
+                <span class="icon"><img src="images/inspired.png" alt="inspired" style="width: 200px ; height:200px ; box-shadow: 0px 2px 20px #88888893;
+                    border-radius: 100%;"></span>
+                <p class="icon_title">INSPIRED</p>
+                <div class="buttons_container">
+                    <span class="buttons"><img src="images/ins_text.png" alt="inspired_text" style="width: 70px; height: 70px;  box-shadow: 0px 2px 20px #88888893;
+                        border-radius: 100%;"></span>
+                    <span class="buttons"><img src="images/ins_record.png" alt="inspired_record" style="width: 70px; height: 70px; box-shadow: 0px 2px 20px #88888893;
+                            border-radius: 100%;"></span>
+                    <span class="buttons"><img src="images/ins_play.png" alt="inspired_play" style="width: 70px; height: 70px;   box-shadow: 0px 2px 20px #88888893;
+                                border-radius: 100%;"></span>
                 </div>
             </div>
-            <div class="swiper-slide slide2">Slide 2</div>
-            <div class="swiper-slide">Slide 3</div>
+            <div class="swiper-slide slide2">
+                <span class="icon"><img src="images/melancholic.png" alt="inspired" style="width: 200px ; height:200px ; box-shadow: 0px 2px 20px #88888893;
+                border-radius: 100%;"></span>
+                <p class="icon_title">MELANCHOLIC</p>
+                <div class="buttons_container">
+                    <span class="buttons"><img src="images/mel_text.png" alt="inspired_text" style="width: 70px; height: 70px;  box-shadow: 0px 2px 20px #88888893;
+                    border-radius: 100%;"></span>
+                    <span class="buttons"><img src="images/mel_record.png" alt="inspired_record" style="width: 70px; height: 70px; box-shadow: 0px 2px 20px #88888893;
+                        border-radius: 100%;"></span>
+                    <span class="buttons"><img src="images/mel_play.png" alt="inspired_play" style="width: 70px; height: 70px;   box-shadow: 0px 2px 20px #88888893;
+                            border-radius: 100%;"></span>
+                </div>
+            </div>
+            <div class="swiper-slide slide3">
+                <span class="icon"><img src="images/inspired.png" alt="inspired" style="width: 200px ; height:200px ; box-shadow: 0px 2px 20px #88888893;
+                border-radius: 100%;"></span>
+                <p class="icon_title">INSPIRED</p>
+                <div class="buttons_container">
+                    <span class="buttons"><img src="images/ins_text.png" alt="inspired_text" style="width: 70px; height: 70px;  box-shadow: 0px 2px 20px #88888893;
+                    border-radius: 100%;"></span>
+                    <span class="buttons"><img src="images/ins_record.png" alt="inspired_record" style="width: 70px; height: 70px; box-shadow: 0px 2px 20px #88888893;
+                        border-radius: 100%;"></span>
+                    <span class="buttons"><img src="images/ins_play.png" alt="inspired_play" style="width: 70px; height: 70px;   box-shadow: 0px 2px 20px #88888893;
+                            border-radius: 100%;"></span>
+                </div>
+            </div>
             <div class="swiper-slide">Slide 4</div>
 
         </div>
         <!-- Add Arrows -->
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
+        <!-- <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div> -->
     </div>
     <!-- Swiper JS -->
     <!-- <script src="../package/js/swiper.min.js"></script> -->
@@ -59,6 +93,26 @@
                 prevEl: '.swiper-button-prev',
             },
         });
+
+        $(window).ready(function () {
+
+            var wHeight = $(window).height();
+
+            $('.slide')
+                .height(wHeight)
+                .scrollie({
+                    scrollOffset: -50,
+                    scrollingInView: function (elem) {
+
+                        var bgColor = elem.data('background');
+
+                        $('body').css('background-color', bgColor);
+
+                    }
+                });
+
+        });
+
     </script>
 </body>
 
