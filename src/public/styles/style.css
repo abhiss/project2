@@ -53,9 +53,9 @@
 }
 
 .icon_title{
-    font-family: marcia, serif;
-    font-weight: 200;
-    font-style: normal;
+    font-family: termina, sans-serif;
+    font-weight: 300;
+    font-style: normal;;
     font-size:20px;
     text-align: center;
     color: #F7F9F3;
@@ -96,6 +96,22 @@
    
 }
 
+.new_cat{
+    display:flex;
+    font-family: termina, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    background-color: #4C4D54;
+    color: white;
+    text-align: center;
+    font-size: 15px;
+    width: 250px;
+    height: 30px;
+    border-radius: 20px;
+    margin: auto;
+    margin-top: 20px;
+    
+}
 
 html,body {
 position: relative;
@@ -119,7 +135,34 @@ height: 100%;
 }
 
 
-/* Marcia Italic
+/* Termina Thin
+
+font-family: termina, sans-serif;
+font-weight: 100;
+font-style: normal;
+
+Termina Extra Light
+
+font-family: termina, sans-serif;
+font-weight: 200;
+font-style: normal;
+
+Termina Light
+
+font-family: termina, sans-serif;
+font-weight: 300;
+font-style: normal;
+
+Termina Regular
+
+font-family: termina, sans-serif;
+font-weight: 400;
+font-style: normal;
+
+ 
+ 
+
+Marcia Italic
 
 font-family: marcia, serif;
 font-weight: 400;
