@@ -1,5 +1,7 @@
 import * as express from 'express';
+
 import htmlRoutes from './routes/htmlRoutes';
+import * as cors from 'cors'
 //var db = require("./models");
 import * as path from 'path'
 
@@ -10,7 +12,7 @@ var PORT = 3000;
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static(path.join(__dirname + '/public')));
-
+app.use(cors())
 //put requests in there :)
 htmlRoutes(app)
 
