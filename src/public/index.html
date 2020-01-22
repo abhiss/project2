@@ -108,6 +108,10 @@
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
             },
+            effect: 'fade',
+            fadeEffect: {
+                crossFade: false
+            }
         });
 
         $(window).ready(function () {
@@ -116,16 +120,6 @@
 
             $('.slide')
                 .height(wHeight)
-                .scrollie({
-                    scrollOffset: -50,
-                    scrollingInView: function (elem) {
-
-                        var bgColor = elem.data('background');
-
-                        $('body').css('background-color', bgColor);
-
-                    }
-                });
 
         });
 
