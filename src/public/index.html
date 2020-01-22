@@ -7,7 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <link rel="stylesheet" href="https://use.typekit.net/xjt5ste.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/xjt5ste.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+
+
+    <script src="https://unpkg.com/swiper/js/swiper.js"></script>
+    <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
 
     <link rel="stylesheet" href="styles/style.css">
 
@@ -15,54 +22,108 @@
 
 </head>
 
-<body class="background">
-
-    <nav class="nav_bar">
-        <p></p>
-        <p><img src="images/mail_icon.png" alt="mail" class="mail_icon"></p>
-    </nav>
-    <div class="title">
-        <p>Hey You</p>
-        <p>How are you feeling?</p>
+<body>
+    <div id="nav_bar_container">
+        <nav class="nav_bar">
+            <p></p>
+            <p><img src="images/mail_icon.png" alt="mail" class="mail_icon"></p>
+        </nav>
+        <div>
+            <p class="title">Hey You</p>
+            <p class="sub_title">How are you feeling?</p>
+        </div>
     </div>
-    <div class="menu">
-        <input type="checkbox" id="toggle" />
-        <label id="show-menu" for="toggle">
-            <div class="btn">
-                <i class="material-icons md-36 toggleBtn menuBtn">menu</i>
-                <i class="material-icons md-36 toggleBtn closeBtn">close</i>
+    <!-- Swiper -->
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide slide1">
+                <span class="icon"><img src="images/inspired.png" alt="inspired" style="width: 200px ; height:200px ; box-shadow: 0px 2px 20px #88888893;
+                    border-radius: 100%;"></span>
+                <p class="icon_title">INSPIRED</p>
+                <div class="buttons_container">
+                    <span class="buttons"><img src="images/ins_text.png" alt="inspired_text" style="width: 70px; height: 70px;  box-shadow: 0px 2px 20px #88888893;
+                        border-radius: 100%;"></span>
+                    <span class="buttons"><img src="images/ins_record.png" alt="inspired_record" style="width: 70px; height: 70px; box-shadow: 0px 2px 20px #88888893;
+                            border-radius: 100%;"></span>
+                    <span class="buttons"><img src="images/ins_play.png" alt="inspired_play" style="width: 70px; height: 70px;   box-shadow: 0px 2px 20px #88888893;
+                                border-radius: 100%;"></span>
+                </div>
             </div>
-            <div class="btn">
-                <i class="material-icons md-36">photo_camera</i>
+            <div class="swiper-slide slide2">
+                <span class="icon"><img src="images/melancholic.png" alt="inspired" style="width: 200px ; height:200px ; box-shadow: 0px 2px 20px #88888893;
+                border-radius: 100%;"></span>
+                <p class="icon_title">MELANCHOLIC</p>
+                <div class="buttons_container">
+                    <span class="buttons"><img src="images/mel_text.png" alt="inspired_text" style="width: 70px; height: 70px;  box-shadow: 0px 2px 20px #88888893;
+                    border-radius: 100%;"></span>
+                    <span class="buttons"><img src="images/mel_record.png" alt="inspired_record" style="width: 70px; height: 70px; box-shadow: 0px 2px 20px #88888893;
+                        border-radius: 100%;"></span>
+                    <span class="buttons"><img src="images/mel_play.png" alt="inspired_play" style="width: 70px; height: 70px;   box-shadow: 0px 2px 20px #88888893;
+                            border-radius: 100%;"></span>
+                </div>
             </div>
-            <div class="btn">
-                <i class="material-icons md-36">photo</i>
+            <div class="swiper-slide slide3">
+                <span class="icon"><img src="images/inspired.png" alt="inspired" style="width: 200px ; height:200px ; box-shadow: 0px 2px 20px #88888893;
+                border-radius: 100%;"></span>
+                <p class="icon_title">INSPIRED</p>
+                <div class="buttons_container">
+                    <span class="buttons"><img src="images/ins_text.png" alt="inspired_text" style="width: 70px; height: 70px;  box-shadow: 0px 2px 20px #88888893;
+                    border-radius: 100%;"></span>
+                    <span class="buttons"><img src="images/ins_record.png" alt="inspired_record" style="width: 70px; height: 70px; box-shadow: 0px 2px 20px #88888893;
+                        border-radius: 100%;"></span>
+                    <span class="buttons"><img src="images/ins_play.png" alt="inspired_play" style="width: 70px; height: 70px;   box-shadow: 0px 2px 20px #88888893;
+                            border-radius: 100%;"></span>
+                </div>
             </div>
-            <div class="btn">
-                <i class="material-icons md-36">music_note</i>
-            </div>
-            <div class="btn">
-                <i class="material-icons md-36">chat_bubble</i>
-            </div>
-            <div class="btn">
-                <i class="material-icons md-36">settings</i>
-            </div>
-            <div class="btn">
-                <i class="material-icons md-36">phone</i>
-            </div>
-            <div class="btn">
-                <i class="material-icons md-36">cloud</i>
-            </div>
-            <div class="btn">
-                <i class="material-icons md-36">videocam</i>
-            </div>
-        </label>
+            <div class="swiper-slide">Slide 4</div>
+
+        </div>
+        <!-- Add Arrows -->
+        <!-- <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div> -->
     </div>
+    <!-- Swiper JS -->
+    <!-- <script src="../package/js/swiper.min.js"></script> -->
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+
+        $(window).ready(function () {
+
+            var wHeight = $(window).height();
+
+            $('.slide')
+                .height(wHeight)
+                .scrollie({
+                    scrollOffset: -50,
+                    scrollingInView: function (elem) {
+
+                        var bgColor = elem.data('background');
+
+                        $('body').css('background-color', bgColor);
+
+                    }
+                });
+
+        });
+
+    </script>
+</body>
+
+</html>
 
 
 
 
 
+<<<<<<< HEAD
+=======
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -73,6 +134,7 @@
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
     
+>>>>>>> 591f0a942b0d18da2c2687e08242f8f4a2f8707b
 </body>
 
 </html>
