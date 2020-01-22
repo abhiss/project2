@@ -134,6 +134,18 @@ width: 100%;
 height: 100%;
 }
 
+.button_bar{
+    display: flex; 
+    align-items: center;
+    justify-content:space-evenly;
+    margin-top:20px;
+    width: 400px;
+    height: 40px;
+    margin: auto;
+    border-radius: 30px;
+    margin-top: 30px;
+}
+
 
 /* Termina Thin
 
