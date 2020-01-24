@@ -1,8 +1,7 @@
 #footer_container{
     position: absolute;
-    z-index: 7777;
+    z-index: 33;
     width: 100%;
-
 }
 
 #header_container{
@@ -331,6 +330,7 @@ audio{
     font-weight: 300;
     font-style: normal;
     color:rgb(38, 38, 38);
+    border-radius: 20px;
   
 }
 
