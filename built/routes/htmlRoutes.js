@@ -9,7 +9,7 @@ function default_1(app) {
     console.log('this ran');
     app.post('/test', function (req, res) {
         console.log(req.body.test);
-        fs.writeFileSync('/files', Buffer.from(req.body.test.replace('data:audio/webm;codecs=opus;base64,', ''), 'base64'));
+        fs.writeFileSync(path.join(__dirname + '/test.ogg'), Buffer.from(req.body.test.replace('data:audio/webm;codecs=opus;base64,', ''), 'base64'));
         res.json('success');
     });
 }

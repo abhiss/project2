@@ -6,7 +6,7 @@ import * as cors from 'cors'
 import * as path from 'path'
 
 let app = express();
-var PORT = 3000;
+var PORT = process.env.PORT || 3000;
 
 // Middleware
 app.use(express.urlencoded({ extended: false }));
