@@ -5,14 +5,15 @@
   "main": "server.js",
   "type": "modules",
   "scripts": {
-    "build": "python helper.py && tsc",
-    "run": "python helper.py && tsc && node ./built/server.js "
+    "abuild": "python helper.py && tsc",
+    "arun": "python helper.py && tsc && node ./built/server.js",
+    "start": "node ./built/server.js"
   },
   "license": "ISC",
   "dependencies": {
-    "@types/cors": "^2.8.6",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
+    "@types/cors": "^2.8.6",
     "dotenv": "^8.2.0",
     "express": "^4.17.0",
     "recorder-js": "^1.0.7"
