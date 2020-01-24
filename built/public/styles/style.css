@@ -223,9 +223,29 @@
     border-radius: 20px;
     margin: auto;
     margin-top: 20px;
-     box-shadow: 
+    box-shadow: 
     8px 8px 16px rgb(138, 125, 102), 
     -8px -8px 16px    rgb(215, 194, 158);
+  
+}
+
+.text_box{
+    display:flex;
+    text-align: left;
+    font-size: 20px;
+    width: auto;
+    height: auto;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius:20px;
+    border-style: none;
+    margin: auto;
+    margin-top: 20px;
+    padding: 50px;
+  
+    font-family: marcia, serif;
+    font-weight: 400;
+    font-style: normal;
+    color: dimgray;
   
 }
 
