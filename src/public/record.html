@@ -35,7 +35,7 @@
             <p><img src="images/mail_icon.png" alt="mail" class="mail_icon"></p>
         </nav>
         <div>
-            <p class="title">Hey You</p>
+            <p class="title" id="home">Hey You</p>
         </div>
     </div>
     <!-- Swiper -->
@@ -46,16 +46,15 @@
                     border-radius: 100%;"></span>
                 <p class="icon_title" style="margin-top: 50px;">INSPIRED</p>
                 <div class="progress"
-                    style="width:400px; height: 5px; margin:auto; margin-top: 60px; margin-bottom: 60px;" ;>
+                    style="width:400px; height: 5px; margin:auto; margin-top: 60px; margin-bottom: 60px;">
                     <div class="progress-bar bg-danger" role="progressbar" style="width: 10%" aria-valuenow="100"
                         aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
-
                 <div>
-                    <button type="button" class="btn btn-dark button_bar">PLAY</button>
+                    <button type="button" class="btn btn-dark ins_button_bar">PLAY</button>
                 </div>
                 <div>
-                    <button type="button" class="btn btn-outline-light button_bar ">SAVE</button>
+                    <button type="button" class="btn btn-outline-light ins_button_bar">SAVE</button>
                 </div>
             </div>
             <div class="swiper-slide slide2">
@@ -68,10 +67,10 @@
                         aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
                 <div>
-                    <button type="button" class="btn btn-dark button_bar">PLAY</button>
+                    <button type="button" class="btn btn-dark mel_button_bar">PLAY</button>
                 </div>
                 <div>
-                    <button type="button" class="btn btn-outline-light button_bar ">SAVE</button>
+                    <button type="button" class="btn btn-outline-light mel_button_bar">SAVE</button>
                 </div>
 
             </div>
@@ -86,16 +85,16 @@
                 </div>
 
                 <div>
-                    <button type="button" class="btn btn-dark button_bar">PLAY</button>
+                    <button type="button" class="btn btn-dark joy_button_bar">PLAY</button>
                 </div>
                 <div>
-                    <button type="button" class="btn btn-outline-light button_bar ">SAVE</button>
+                    <button type="button" class="btn btn-outline-light joy_button_bar">SAVE</button>
                 </div>
             </div>
             <div class="swiper-slide slide4">
                 <span class="icon"><img src="images/record_button.png" alt="record" style="width: 200px ; height:200px;
                     border-radius: 100%;"></span>
-                <input type="text" class="new_cat" placeholder="SOMETHING ELSE" style="color:#F7F9F3; margin-top: 50px;"
+                <input type="text" class="cat_box" placeholder="SOMETHING ELSE" style="color:#F7F9F3; margin-top: 50px;"
                     ;>
                 <div class="progress"
                     style="width:400px; height: 5px; margin:auto; margin-top: 60px; margin-bottom: 60px;" ;>
@@ -103,10 +102,10 @@
                         aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
                 <div>
-                    <button type="button" class="btn btn-dark button_bar">PLAY</button>
+                    <button type="button" class="btn btn-dark som_button_bar">PLAY</button>
                 </div>
                 <div>
-                    <button type="button" class="btn btn-outline-light button_bar">SAVE</button>
+                    <button type="button" class="btn btn-outline-light som_button_bar">SAVE</button>
                 </div>
             </div>
 
@@ -135,6 +134,13 @@
 
         });
 
+
+    </script>
+    <script type="text/javascript">
+
+        document.getElementById("home").onclick = function () {
+            location.href = "index.html";
+        };
 
     </script>
 
