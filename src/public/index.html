@@ -144,11 +144,13 @@
         });
 
 
-
-
     </script>
 
     <script type="text/javascript">
+
+        document.getElementById("home").onclick = function () {
+            location.href = "index.html";
+        };
 
         document.getElementById("ins_record").onclick = function () {
             location.href = "record.html";
@@ -166,9 +168,54 @@
             location.href = "record.html#slide4";
         };
 
-        document.getElementById("logo").onclick = function () {
-            location.href = "index.html";
+
+
+        document.getElementById("ins_text").onclick = function () {
+            location.href = "text.html";
         };
+
+        document.getElementById("mel_text").onclick = function () {
+            location.href = "text.html#slide2";
+        };
+
+        document.getElementById("joy_text").onclick = function () {
+            location.href = "text.html#slide3";
+        };
+
+        document.getElementById("som_text").onclick = function () {
+            location.href = "text.html#slide4";
+        };
+
+
+        document.getElementById("ins_play").onclick = function () {
+            location.href = "play.html";
+        };
+
+        document.getElementById("mel_play").onclick = function () {
+            location.href = "play.html#slide2";
+        };
+
+        document.getElementById("joy_play").onclick = function () {
+            location.href = "play.html#slide3";
+        };
+
+        document.getElementById("som_play").onclick = function () {
+            location.href = "play.html#slide4";
+        };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         function openNav() {
             document.querySelector(".sidenav").style.height = "40vh";

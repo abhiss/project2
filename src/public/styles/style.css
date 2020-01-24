@@ -317,17 +317,16 @@ audio{
     text-align: left;
     font-size: 20px;
     width: auto;
-    height: auto;
+    height: 30vh;
     background-color: rgba(0, 0, 0, 0);
     border-radius:20px;
     border-style: none;
     margin: auto;
     margin-top: 20px;
-    padding: 50px;
+    padding: 30px;
     font-family: marcia, serif;
     font-weight: 400;
     font-style: normal;
-    color: dimgray;
   
 }
 
