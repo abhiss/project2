@@ -15,7 +15,7 @@
 #recordings-cont {
     display: flex;
     flex-direction: column;
-    z-index: 999999;
+    z-index: 8888;
     text-align: center;
     margin: auto;
     
