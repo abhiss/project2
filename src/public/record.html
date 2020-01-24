@@ -41,7 +41,7 @@
     <!-- Swiper -->
     <div class="swiper-container">
         <div class="swiper-wrapper">
-            <div class="swiper-slide slide1">
+            <div class="swiper-slide slide1" data-hash="slide1" id="slide1">
                 <span class="icon"><img src="images/record_button.png" alt="record" style="width: 200px ; height:200px;
                     border-radius: 100%;"></span>
                 <p class="icon_title" style="margin-top: 50px;">INSPIRED</p>
@@ -57,7 +57,7 @@
                     <button type="button" class="btn btn-outline-light ins_button_bar">SAVE</button>
                 </div>
             </div>
-            <div class="swiper-slide slide2">
+            <div class="swiper-slide slide2" data-hash="slide2">
                 <span class="icon"><img src="images/record_button.png" alt="record" style="width: 200px ; height:200px;
                     border-radius: 100%;"></span>
                 <p class="icon_title" style="margin-top: 50px;">MELANCHOLIC</p>
@@ -74,7 +74,7 @@
                 </div>
 
             </div>
-            <div class="swiper-slide slide3">
+            <div class="swiper-slide slide3" data-hash="slide3">
                 <span class="icon"><img src="images/record_button.png" alt="record" style="width: 200px ; height:200px;
                     border-radius: 100%;"></span>
                 <p class="icon_title" style="margin-top: 50px;">JOY</p>
@@ -91,7 +91,7 @@
                     <button type="button" class="btn btn-outline-light joy_button_bar">SAVE</button>
                 </div>
             </div>
-            <div class="swiper-slide slide4">
+            <div class="swiper-slide slide4" data-hash="slide4">
                 <span class="icon"><img src="images/record_button.png" alt="record" style="width: 200px ; height:200px;
                     border-radius: 100%;"></span>
                 <input type="text" class="cat_box" placeholder="SOMETHING ELSE" style="color:#F7F9F3; margin-top: 50px;"
@@ -141,6 +141,15 @@
         document.getElementById("home").onclick = function () {
             location.href = "index.html";
         };
+
+    </script>
+
+    <script>
+
+        function(change) {
+            const newHash = document.location.hash.replace('#', 'slide2'),
+
+        }
 
     </script>
 

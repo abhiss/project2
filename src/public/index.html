@@ -103,13 +103,18 @@
     <!-- Initialize Swiper -->
     <script>
 
-
-
         var swiper = new Swiper('.swiper-container', {
+
+
             slideToClickedSlide: false,
+
             navigation: {
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
+            },
+
+            hashNavigation: {
+                replaceState: true,
             },
 
             effect: 'fade',
@@ -136,7 +141,7 @@
     <script type="text/javascript">
 
         document.getElementById("ins_record").onclick = function () {
-            location.href = "record.html#melancholic";
+            location.href = "record.html";
         };
 
         document.getElementById("mel_record").onclick = function () {
