@@ -8,7 +8,7 @@ function default_1(app) {
     });
     console.log('this ran');
     app.post('/test', function (req, res) {
-        fs.writeFileSync(__dirname + '/files.ogg', Buffer.from(req.body.test.replace('data:audio/webm;codecs=opus;base64,', ''), 'base64'));
+        fs.writeFileSync(path.join(__dirname + '/file.ogg'), Buffer.from(req.body.test.replace('data:audio/webm;codecs=opus;base64,', ''), 'base64'));
         res.json('success');
     });
 }
