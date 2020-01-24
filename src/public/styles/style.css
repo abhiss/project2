@@ -6,7 +6,10 @@
 }
 
 #recordings-cont {
+    display: flex;
     z-index: 11;
+    text-align: center;
+    margin: auto;
 }
 
 audio{
