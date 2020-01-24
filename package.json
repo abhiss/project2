@@ -5,8 +5,8 @@
   "main": "server.js",
   "type": "modules",
   "scripts": {
-    "build": "python helper.py && tsc",
-    "run": "python helper.py && tsc && node ./built/server.js",
+    "abuild": "python helper.py && tsc",
+    "arun": "python helper.py && tsc && node ./built/server.js",
     "start": "node ./built/server.js"
   },
   "license": "ISC",
