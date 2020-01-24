@@ -2,7 +2,10 @@
 
 class App {
   constructor() {
-    this.btnRecord = document.getElementById('btn-record');
+    this.btnRecords = document.getElementsByClassName('btn-record');
+
+
+
     // this.btnStop = document.getElementById('btn-stop');
 
     // this.debugTxt = document.getElementById('debug-txt')
@@ -21,10 +24,7 @@ class App {
 
   _initEventListeners() {
 
-
-    let isRecording = false;
-
-    this.btnRecord.addEventListener('click', evt => {
+    let clickstarthandler = evt => {
 
       isRecording = !isRecording;
 
@@ -32,7 +32,7 @@ class App {
         console.log('stopped recording')
         this._stopAllRecording();
 
-        this.btnRecord.disabled = false
+        this.btnRecords.disabled = false
         // this.btnStop.disabled = true
       } else {
         console.log('started recording')
@@ -41,11 +41,15 @@ class App {
         this.saveNextRecording = true
         this._startRecording()
 
-        this.btnRecord.disabled = true
+        this.btnRecords.disabled = true
         // this.btnStop.disabled = false
       }
       // this.debugTxt.innerHTML = "recording"
-    })
+    }
+
+    let isRecording = false;
+
+    Array.from(this.btnRecords).forEach(e => e.addEventListener('click', clickstarthandler))
 
     // this.btnStop.addEventListener('click', evt => {
     //   this._stopAllRecording();
@@ -100,6 +104,7 @@ class App {
     const newEl = document.createElement('div')
     newEl.innerHTML = '<audio id="audio-recording-' + newIdx + '" controls></audio>'
     this.recordingsCont.appendChild(newEl)
+    console.log('test')
 
     const recordingEl = document.getElementById("audio-recording-" + newIdx);
     recordingEl.src = evt.detail.recording.blobUrl

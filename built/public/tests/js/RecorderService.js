@@ -1,5 +1,5 @@
 class RecorderService {
-  constructor () {
+  constructor() {
     window.AudioContext = window.AudioContext || window.webkitAudioContext
 
     this.em = document.createDocumentFragment()
@@ -23,7 +23,7 @@ class RecorderService {
   }
 
   /* Returns promise */
-  startRecording () {
+  startRecording() {
     if (this.state !== 'inactive') {
       return
     }
@@ -77,7 +77,7 @@ class RecorderService {
       })
   }
 
-  _startRecordingWithStream (stream) {
+  _startRecordingWithStream(stream) {
     this.micAudioStream = stream
 
     this.inputStreamNode = this.audioCtx.createMediaStreamSource(this.micAudioStream)
@@ -121,7 +121,7 @@ class RecorderService {
     }
   }
 
-  _onAudioProcess (e) {
+  _onAudioProcess(e) {
     if (this.config.broadcastAudioProcessEvents) {
       this.em.dispatchEvent(new CustomEvent('onaudioprocess', {
         detail: {
@@ -145,7 +145,7 @@ class RecorderService {
     }
   }
 
-  stopRecording () {
+  stopRecording() {
     if (this.state === 'inactive') {
       return
     }
@@ -160,7 +160,7 @@ class RecorderService {
     }
   }
 
-  _onDataAvailable (evt) {
+  _onDataAvailable(evt) {
     this.chunks.push(evt.data)
     this.chunkType = evt.data.type
 
@@ -175,11 +175,11 @@ class RecorderService {
     reader.addEventListener("load", function () {
       console.log(reader.result);
       postData('http://localhost:3000/test', { test: reader.result })
-      .then((data) => {
-        console.log(data); // JSON data parsed by `response.json()` call
-      }, function () {
-        console.log("rejected :(")
-      });
+        .then((data) => {
+          console.log(data); // JSON data parsed by `response.json()` call
+        }, function () {
+          console.log("rejected :(")
+        });
 
     }, false);
     // The function accepts Blobs and Files
@@ -235,7 +235,7 @@ class RecorderService {
     this.em.dispatchEvent(new CustomEvent('recording', { detail: { recording: recording } }))
   }
 
-  _onError (evt) {
+  _onError(evt) {
     console.log('error', evt)
     this.em.dispatchEvent(new Event('error'))
     alert('error:' + evt) // for debugging purposes

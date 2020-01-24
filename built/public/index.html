@@ -42,11 +42,18 @@
     <!-- Swiper -->
     <div class="swiper-container">
         <div class="swiper-wrapper">
-            <div class="swiper-slide slide1">
+            <div class="swiper-slide slide1" data-hash="slide1">
                 <span class="icon"><img src="images/inspired.png" alt="inspired" style="width: 200px ; height:200px;
                     border-radius: 100%;"></span>
                 <p class="icon_title">INSPIRED</p>
                 <div class="buttons_container">
+                    <!-- <span class="buttons"><img src="images/ins_text.png" alt="inspired_text" style="width: 70px; height: 70px;  box-shadow: 0px 2px 20px  rgba(0, 0, 0, 0.605);
+                        border-radius: 100%;"></span>
+                    <span class="buttons"><a href="record.html"><img src="images/ins_record.png" alt="inspired_record"
+                                style="width: 70px; height: 70px; box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.605);
+                            border-radius: 100%;"></a></span>
+                    <span class="buttons"><img src="images/ins_play.png" alt="inspired_play" style="width: 70px; height: 70px;   box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.605);
+                                border-radius: 100%;"></span> -->
                     <span id="ins_text" class="btn btn-dark ins_buttons"><img src="images/text.svg"
                             alt="melancholic_text"></span>
                     <span id="ins_record" class="btn btn-dark ins_buttons"><img src="images/record.svg"
@@ -55,7 +62,7 @@
                             alt="melancholic_play"></span>
                 </div>
             </div>
-            <div class="swiper-slide slide2">
+            <div class="swiper-slide slide2" data-hash="slide2">
                 <span class="icon"><img src="images/melancholic.png" alt="melancholic" style="width: 200px ; height:200px ;
                 border-radius: 100%;"></span>
                 <p class="icon_title">MELANCHOLIC</p>
@@ -68,7 +75,7 @@
                             alt="melancholic_play"></span>
                 </div>
             </div>
-            <div class="swiper-slide slide3">
+            <div class="swiper-slide slide3" data-hash="slide3">
                 <span class="icon"><img src="images/joy.png" alt="joy" style="width: 200px ; height:200px;
                 border-radius: 100%;"></span>
                 <p class="icon_title">JOY</p>
@@ -82,7 +89,7 @@
 
                 </div>
             </div>
-            <div class="swiper-slide slide4">
+            <div class="swiper-slide slide4" data-hash="slide4">
                 <span class="icon"><img src="images/something.png" alt="something"
                         style="width: 200px ; height:200px;"></span>
                 <input type="text" class="cat_box" placeholder="SOMETHING ELSE" style="color:#F7F9F3;">
@@ -145,15 +152,15 @@
         };
 
         document.getElementById("mel_record").onclick = function () {
-            location.href = "record.html#melancholic";
+            location.href = "record.html#slide2";
         };
 
         document.getElementById("joy_record").onclick = function () {
-            location.href = "record.html#melancholic";
+            location.href = "record.html#slide3";
         };
 
-        document.getElementById("ins_record").onclick = function () {
-            location.href = "record.html#melancholic";
+        document.getElementById("som_record").onclick = function () {
+            location.href = "record.html#slide4";
         };
 
         document.getElementById("logo").onclick = function () {

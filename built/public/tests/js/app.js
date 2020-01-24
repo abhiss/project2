@@ -2,17 +2,20 @@
 
 class App {
   constructor() {
-    this.btnRecord = document.getElementById('btn-record');
-    this.btnStop = document.getElementById('btn-stop');
+    this.btnRecords = document.getElementsByClassName('btn-record');
 
-    this.debugTxt = document.getElementById('debug-txt')
+
+
+    // this.btnStop = document.getElementById('btn-stop');
+
+    // this.debugTxt = document.getElementById('debug-txt')
 
     this.recordingsCont = document.getElementById('recordings-cont')
 
     this.isRecording = false
     this.saveNextRecording = false
 
-    this.debugTxt.innerHTML = "stopped"
+    // this.debugTxt.innerHTML = "stopped"
   }
 
   init() {
@@ -21,23 +24,40 @@ class App {
 
   _initEventListeners() {
 
-    this.btnRecord.addEventListener('click', evt => {
-      this._stopAllRecording()
-      this.saveNextRecording = true
-      this._startRecording()
+    let clickstarthandler = evt => {
 
-      this.btnRecord.disabled = true
-      this.btnStop.disabled = false
-      this.debugTxt.innerHTML = "recording"
-    })
+      isRecording = !isRecording;
 
-    this.btnStop.addEventListener('click', evt => {
-      this._stopAllRecording();
+      if (!isRecording) {
+        console.log('stopped recording')
+        this._stopAllRecording();
 
-      this.btnRecord.disabled = false
-      this.btnStop.disabled = true
-      this.debugTxt.innerHTML = "stopped"
-    })
+        this.btnRecords.disabled = false
+        // this.btnStop.disabled = true
+      } else {
+        console.log('started recording')
+
+        this._stopAllRecording()
+        this.saveNextRecording = true
+        this._startRecording()
+
+        this.btnRecords.disabled = true
+        // this.btnStop.disabled = false
+      }
+      // this.debugTxt.innerHTML = "recording"
+    }
+
+    let isRecording = false;
+
+    Array.from(this.btnRecords).forEach(e => e.addEventListener('click', clickstarthandler))
+
+    // this.btnStop.addEventListener('click', evt => {
+    //   this._stopAllRecording();
+
+    //   this.btnRecord.disabled = false
+    //   this.btnStop.disabled = true
+    //   // this.debugTxt.innerHTML = "stopped"
+    // })
   }
 
   _startRecording() {
@@ -46,19 +66,19 @@ class App {
       this.recorderSrvc.em.addEventListener('recording', (evt) => this._onNewRecording(evt))
     }
 
-    if (!this.webAudioPeakMeter) {
-      this.webAudioPeakMeter = new WebAudioPeakMeter()
-      this.meterEl = document.getElementById('recording-meter')
-    }
+    // if (!this.webAudioPeakMeter) {
+    //   this.webAudioPeakMeter = new WebAudioPeakMeter()
+    //   this.meterEl = document.getElementById('recording-meter')
+    // }
 
-    this.recorderSrvc.onGraphSetupWithInputStream = (inputStreamNode) => {
-      this.meterNodeRaw = this.webAudioPeakMeter.createMeterNode(inputStreamNode, this.recorderSrvc.audioCtx)
-      this.webAudioPeakMeter.createMeter(this.meterEl, this.meterNodeRaw, {})
-    }
+    // this.recorderSrvc.onGraphSetupWithInputStream = (inputStreamNode) => {
+    //   this.meterNodeRaw = this.webAudioPeakMeter.createMeterNode(inputStreamNode, this.recorderSrvc.audioCtx)
+    //   this.webAudioPeakMeter.createMeter(this.meterEl, this.meterNodeRaw, {})
+    // }
 
     this.recorderSrvc.startRecording()
     this.isRecording = true
-    this.debugTxt.innerHTML = "recording..."
+    // this.debugTxt.innerHTML = "recording..."
   }
 
   _stopAllRecording() {
@@ -84,12 +104,13 @@ class App {
     const newEl = document.createElement('div')
     newEl.innerHTML = '<audio id="audio-recording-' + newIdx + '" controls></audio>'
     this.recordingsCont.appendChild(newEl)
+    console.log('test')
 
     const recordingEl = document.getElementById("audio-recording-" + newIdx);
     recordingEl.src = evt.detail.recording.blobUrl
     recordingEl.type = evt.detail.recording.mimeType
     //test
-    
+
     //endtest
   }
 }
