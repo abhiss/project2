@@ -7,6 +7,7 @@
 
 #recordings-cont {
     display: flex;
+    flex-direction: column;
     z-index: 11;
     text-align: center;
     margin: auto;
@@ -114,6 +115,7 @@ audio{
     border-radius: 100%;
     border-width: 0px;
     background-color: #A6967B;
+    margin-top: 5vmin;
     box-shadow: 
     8px 8px 16px rgb(138, 125, 102), 
     -8px -8px 16px    rgb(215, 194, 158);
