@@ -7,7 +7,8 @@
   "scripts": {
     "abuild": "python helper.py && tsc",
     "arun": "python helper.py && tsc && node ./built/server.js",
-    "start": "node ./built/server.js"
+    "start": "node ./built/server.js",
+    "publish":"npm run abuild && git add -A && git commit -m 'save' && git push heroku master"
   },
   "license": "ISC",
   "dependencies": {
