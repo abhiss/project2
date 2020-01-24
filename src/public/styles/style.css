@@ -1,5 +1,5 @@
 #nav_bar_container{
-    position: fixed;
+    position: absolute;
     z-index: 10;
     width: 100%;
 
@@ -10,8 +10,33 @@
     z-index: 11;
     text-align: center;
     margin: auto;
+    
 }
 
+html,body {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    }
+    
+    body {
+    font-size: 14px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+   
+    }
+    
+    .swiper-container {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content :center;
+    width: 100%;
+    height: 100%;
+    }
+
+    
 audio{
     z-index: 11;
 }
@@ -20,14 +45,16 @@ audio{
     display: flex;
     justify-content:center;
     align-items:center;
-    margin-top:30vh; 
+    margin-top: 35vmax;
+    
+     
 }
 
 .buttons_container{
     display: flex; 
     align-items: center;
     justify-content:space-evenly;
-    margin-top: 80px;
+    margin-bottom: 30vmin;
       
 }
 
@@ -92,6 +119,16 @@ audio{
     -8px -8px 16px    rgb(215, 194, 158);
 }
 
+.btn-record {
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    width: 150px ; 
+    height:150px;
+    margin: auto;
+    margin-top: 25vmax;
+
+}
 .ins_button_bar {
     display: flex; 
     align-items: center;
@@ -102,6 +139,7 @@ audio{
     margin: auto;
     border-radius: 30px;
     margin-top: 20px;
+    border-width: 0px;
     box-shadow: 
     8px 8px 16px rgb(169, 149, 139), 
     -8px -8px 16px   rgb(225, 198, 185);
@@ -118,6 +156,7 @@ audio{
     margin: auto;
     border-radius: 30px;
     margin-top: 20px;
+    border-width: 0px;
     box-shadow: 
     8px 8px 16px rgb(96, 101, 109), 
     -8px -8px 16px    rgb(150, 158, 172);
@@ -134,6 +173,7 @@ audio{
     margin: auto;
     border-radius: 30px;
     margin-top: 20px;
+    border-width: 0px;
     box-shadow: 
     8px 8px 16px rgb(152, 127, 129), 
     -8px -8px 16px    rgb(232, 199, 201);
@@ -150,6 +190,7 @@ audio{
     margin: auto;
     border-radius: 30px;
     margin-top: 20px;
+    border-width: 0px;
     box-shadow: 
     8px 8px 16px rgb(138, 125, 102), 
     -8px -8px 16px    rgb(215, 194, 158);
@@ -165,7 +206,8 @@ audio{
     color: #F7F9F3;
     font-size: 40px; 
     text-align: center;
-    margin-top:80px;
+    margin-top:5vmax;
+   
   
 }
 
@@ -176,6 +218,7 @@ audio{
     font-size:15;
     text-align: center;
     color: #F7F9F3;
+    margin-top:15vmax;
    margin: auto;
 
 }
@@ -195,12 +238,19 @@ audio{
 
 .nav_bar{
     display: flex;
-    float:right;
-    margin: 20px;
+    justify-content: space-between;
+    margin: 5vmax;
+
 }
 
 .mail_icon{
     height:20px;
+    float:left;
+}
+
+.menu_icon{
+    height:20px;
+    float:right;
 }
 
 .slide1 {
@@ -259,27 +309,7 @@ audio{
   
 }
 
-html,body {
-position: relative;
-height: 100vh;
-}
 
-body {
-font-size: 14px;
-color: #000;
-margin: 0;
-padding: 0;
-overflow: hidden;
-}
-
-.swiper-container {
-display:flex;
-flex-direction: column;
-align-items: center;
-justify-content :center;
-width: 100%;
-height: 100%;
-}
 
 
 /* Termina Thin
