@@ -5,6 +5,14 @@
 
 }
 
+#recordings-cont {
+    z-index: 11;
+}
+
+audio{
+    z-index: 11;
+}
+
 .icon{
     display: flex;
     justify-content:center;
