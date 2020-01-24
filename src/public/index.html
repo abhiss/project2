@@ -11,7 +11,7 @@
         crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="https://use.typekit.net/xjt5ste.css">
-    <link rel="stylesheet" href="https://use.typekit.net/xjt5ste.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
@@ -84,7 +84,7 @@
             <div class="swiper-slide slide4" data-hash="slide4">
                 <span class="icon"><img src="images/something.png" alt="something"
                         style="width: 150px ; height:150px;"></span>
-                <input type="text" class="cat_box" placeholder="SOMETHING ELSE" style="color:#F7F9F3;">
+                <input type="text" class="cat_box" placeholder="Something Else" style="color:#F7F9F3;">
                 <div class="buttons_container">
                     <span id="som_text" class="btn btn-dark som_buttons"><img src="images/text.svg"
                             alt="something_text"></span>
@@ -101,7 +101,8 @@
             <!-- the button used for test -->
             <a onClick='openNav()'><img src="images/menu.svg" alt="mail" class="menu_icon"></a>
             <div class="sidenav">
-                <p onClick='closeNav()' style="color: white;">CLOSE</p>
+                <p onClick='closeNav()'><img src="images/close_arrow.svg" alt="close" style="height: 10px; width: 40px"
+                        ;></p>
 
                 <p>Profile</p>
                 <p>Sign Out</p>
@@ -112,9 +113,6 @@
     <script>
 
         var swiper = new Swiper('.swiper-container', {
-
-
-            slideToClickedSlide: false,
 
             navigation: {
                 nextEl: '.swiper-button-next',
@@ -169,7 +167,6 @@
         };
 
 
-
         document.getElementById("ins_text").onclick = function () {
             location.href = "text.html";
         };
@@ -203,22 +200,8 @@
             location.href = "play.html#slide4";
         };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         function openNav() {
-            document.querySelector(".sidenav").style.height = "40vh";
+            document.querySelector(".sidenav").style.height = "25vh";
             document.querySelector(".sidenav").style.paddingTop = "20px";
         }
 

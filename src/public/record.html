@@ -11,7 +11,7 @@
         crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="https://use.typekit.net/xjt5ste.css">
-    <link rel="stylesheet" href="https://use.typekit.net/xjt5ste.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
@@ -95,13 +95,12 @@
             </div>
             <div class="swiper-slide slide4" data-hash="slide4">
                 <span>
-                    <img src="images/record_button.png" alt="record" class="btn-record">
+                    <img src="images/record_button.png" alt="record" class="btn-record" style="width: 150px;">
                 </span>
-                <input type="text" class="cat_box" placeholder="SOMETHING ELSE"
+                <input type="text" class="cat_box" placeholder="Something Else"
                     style="color:#F7F9F3; margin-top: 5vmin;">
 
-                <div id="recordings-cont"
-                    style="width:250px; height: 10px; margin:auto; margin-top: 30px; margin-bottom: 60px;">
+                <div id="recordings-cont" style="width:250px; height: 50px; margin:auto;">
                 </div>
                 <!-- <div>
                     <button type="button" class="btn btn-outline-light som_button_bar">SAVE</button>
@@ -115,14 +114,13 @@
     <div id="footer_container">
         <nav class="nav_bar">
             <!-- the button used for test -->
-            <button onClick='openNav()'><img src="images/menu.svg" alt="mail" class="menu_icon"></button>
+            <a onClick='openNav()'><img src="images/menu.svg" alt="mail" class="menu_icon"></a>
             <div class="sidenav">
-                <a onClick='closeNav()' style="color: white;">close</a>
-                <ul>
-                    <li>Profile</li>
-                    <li>Sign Out</li>
-                </ul>
+                <p onClick='closeNav()'><img src="images/close_arrow.svg" alt="close" style="height: 10px; width: 40px"
+                        ;></p>
 
+                <p>Profile</p>
+                <p>Sign Out</p>
             </div>
         </nav>
     </div>
@@ -167,7 +165,7 @@
         };
 
         function openNav() {
-            document.querySelector(".sidenav").style.height = "40vh";
+            document.querySelector(".sidenav").style.height = "25vh";
             document.querySelector(".sidenav").style.paddingTop = "20px";
         }
 
