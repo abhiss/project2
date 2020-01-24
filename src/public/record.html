@@ -29,24 +29,23 @@
 </head>
 
 <body>
-    <div id="nav_bar_container">
-        <nav class="nav_bar">
-            <p></p>
-            <p><img src="images/mail_icon.png" alt="mail" class="mail_icon"></p>
+    <div id="header_container">
+        <nav class="nav_bar"></nav>
+        <p><img src="images/mail_icon.png" alt="mail" class="mail_icon"></p>
         </nav>
         <div>
             <p class="title" id="home">Hey You</p>
+            <p class="sub_title">How are you feeling?</p>
         </div>
     </div>
     <!-- Swiper -->
     <div class="swiper-container">
         <div class="swiper-wrapper">
             <div class="swiper-slide slide1" data-hash="slide1">
-                <span class="icon">
-                    <div class="btn-record"><img src="images/record_button.png" alt="record" style="width: 200px ; height:200px;
-                    border-radius: 100%;"></div>
+                <span>
+                    <img src="images/record_button.png" alt="record" class="btn-record">
                 </span>
-                <p class="icon_title" style="margin-top: 50px;">INSPIRED</p>
+                <p class="icon_title" style="margin-top: 5vmin;">INSPIRED</p>
                 <div class="progress"
                     style="width:400px; height: 5px; margin:auto; margin-top: 40px; margin-bottom: 40px;">
                     <div class="progress-bar bg-danger" role="progressbar" style="width: 10%" aria-valuenow="100"
@@ -60,11 +59,10 @@
                 </div>
             </div>
             <div class="swiper-slide slide2" data-hash="slide2">
-                <span class="icon">
-                    <div class="btn-record"><img src="images/record_button.png" alt="record" style="width: 200px ; height:200px;
-                    border-radius: 100%;"></div i>
+                <span>
+                    <img src="images/record_button.png" alt="record" class="btn-record">
                 </span>
-                <p class="icon_title" style="margin-top: 50px;">MELANCHOLIC</p>
+                <p class="icon_title" style="margin-top: 5vmin;">MELANCHOLIC</p>
                 <div class="progress"
                     style="width:400px; height: 5px; margin:auto; margin-top: 40px; margin-bottom: 40px;" ;>
                     <div class="progress-bar bg-danger" role="progressbar" style="width: 10%" aria-valuenow="100"
@@ -79,17 +77,15 @@
 
             </div>
             <div class="swiper-slide slide3" data-hash="slide3">
-                <span class="icon">
-                    <div class="btn-record"><img src="images/record_button.png" alt="record" style="width: 200px ; height:200px;
-                    border-radius: 100%;"></div>
+                <span>
+                    <img src="images/record_button.png" alt="record" class="btn-record">
                 </span>
-                <p class="icon_title" style="margin-top: 50px;">JOY</p>
+                <p class="icon_title" style="margin-top: 5vmin;">JOY</p>
                 <div class="progress"
                     style="width:400px; height: 5px; margin:auto; margin-top: 40px; margin-bottom: 40px;" ;>
                     <div class="progress-bar bg-danger" role="progressbar" style="width: 10%" aria-valuenow="100"
                         aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
-
                 <div>
                     <button type="button" class="btn btn-dark joy_button_bar">PLAY</button>
                 </div>
@@ -98,27 +94,37 @@
                 </div>
             </div>
             <div class="swiper-slide slide4" data-hash="slide4">
-                <span class="icon">
-                    <div class="btn-record"><img src="images/record_button.png" alt="record" style="width: 200px ; height:200px;
-                    border-radius: 100%;"></div>
+                <span>
+                    <img src="images/record_button.png" alt="record" class="btn-record">
                 </span>
                 <input type="text" class="cat_box" placeholder="SOMETHING ELSE"
-                    style="color:#F7F9F3; margin-top: 50px;">
+                    style="color:#F7F9F3; margin-top: 5vmin;">
 
                 <div id="recordings-cont"
-                    style="width:400px; height: 5px; margin:auto; margin-top: 60px; margin-bottom: 60px;"></div>
+                    style="width:250px; height: 10px; margin:auto; margin-top: 30px; margin-bottom: 60px;">
+                </div>
+                <!-- <div>
+                    <button type="button" class="btn btn-outline-light som_button_bar">SAVE</button>
+                </div> -->
+            </div>
 
-            </div>
-            <div>
-                <button type="button" class="btn btn-dark som_button_bar">PLAY</button>
-            </div>
-            <div>
-                <button type="button" class="btn btn-outline-light som_button_bar">SAVE</button>
-            </div>
         </div>
 
     </div>
 
+    <div id="footer_container">
+        <nav class="nav_bar">
+            <!-- the button used for test -->
+            <button onClick='openNav()'><img src="images/menu.svg" alt="mail" class="menu_icon"></button>
+            <div class="sidenav">
+                <a onClick='closeNav()' style="color: white;">close</a>
+                <ul>
+                    <li>Profile</li>
+                    <li>Sign Out</li>
+                </ul>
+
+            </div>
+        </nav>
     </div>
 
 
@@ -129,10 +135,15 @@
         var swiper = new Swiper('.swiper-container', {
 
             slideToClickedSlide: false,
+
+
             effect: 'fade',
             fadeEffect: {
                 crossFade: false
             },
+
+            loop: true,
+
             hashNavigation: {
                 replaceState: true,
             },
@@ -155,6 +166,16 @@
         document.getElementById("home").onclick = function () {
             location.href = "index.html";
         };
+
+        function openNav() {
+            document.querySelector(".sidenav").style.height = "40vh";
+            document.querySelector(".sidenav").style.paddingTop = "20px";
+        }
+
+        function closeNav() {
+            document.querySelector(".sidenav").style.height = "0";
+            document.querySelector(".sidenav").style.paddingTop = "0";
+        }
 
     </script>
 
