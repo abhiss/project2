@@ -1,8 +1,7 @@
 #nav_bar_container{
-    
     position: fixed;
     z-index: 10;
-     width: 100%;
+    width: 100%;
 
 }
 
@@ -10,7 +9,7 @@
     display: flex;
     justify-content:center;
     align-items:center;
-    margin-top:230px; 
+    margin-top:200px; 
 }
 
 .buttons_container{
@@ -91,7 +90,7 @@
     height: 40px;
     margin: auto;
     border-radius: 30px;
-    margin-top: 30px;
+    margin-top: 20px;
     box-shadow: 
     8px 8px 16px rgb(169, 149, 139), 
     -8px -8px 16px   rgb(225, 198, 185);
@@ -107,7 +106,7 @@
     height: 40px;
     margin: auto;
     border-radius: 30px;
-    margin-top: 30px;
+    margin-top: 20px;
     box-shadow: 
     8px 8px 16px rgb(96, 101, 109), 
     -8px -8px 16px    rgb(150, 158, 172);
@@ -123,7 +122,7 @@
     height: 40px;
     margin: auto;
     border-radius: 30px;
-    margin-top: 30px;
+    margin-top: 20px;
     box-shadow: 
     8px 8px 16px rgb(152, 127, 129), 
     -8px -8px 16px    rgb(232, 199, 201);
@@ -139,7 +138,7 @@
     height: 40px;
     margin: auto;
     border-radius: 30px;
-    margin-top: 30px;
+    margin-top: 20px;
     box-shadow: 
     8px 8px 16px rgb(138, 125, 102), 
     -8px -8px 16px    rgb(215, 194, 158);
@@ -155,7 +154,7 @@
     color: #F7F9F3;
     font-size: 40px; 
     text-align: center;
-    margin-top:100px;
+    margin-top:80px;
   
 }
 
@@ -259,6 +258,7 @@ font-size: 14px;
 color: #000;
 margin: 0;
 padding: 0;
+overflow: hidden;
 }
 
 .swiper-container {
