@@ -41,7 +41,7 @@
     <!-- Swiper -->
     <div class="swiper-container">
         <div class="swiper-wrapper">
-            <div class="swiper-slide slide1" data-hash="slide1" id="slide1">
+            <div class="swiper-slide slide1" data-hash="slide1">
                 <span class="icon"><img src="images/record_button.png" alt="record" style="width: 200px ; height:200px;
                     border-radius: 100%;"></span>
                 <p class="icon_title" style="margin-top: 50px;">INSPIRED</p>
@@ -119,11 +119,16 @@
 
 
         var swiper = new Swiper('.swiper-container', {
+
             slideToClickedSlide: false,
             effect: 'fade',
             fadeEffect: {
                 crossFade: false
-            }
+            },
+            hashNavigation: {
+                replaceState: true,
+            },
+
         });
 
         $(window).ready(function () {
@@ -141,15 +146,6 @@
         document.getElementById("home").onclick = function () {
             location.href = "index.html";
         };
-
-    </script>
-
-    <script>
-
-        function(change) {
-            const newHash = document.location.hash.replace('#', 'slide2'),
-
-        }
 
     </script>
 

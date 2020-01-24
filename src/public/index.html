@@ -42,7 +42,7 @@
     <!-- Swiper -->
     <div class="swiper-container">
         <div class="swiper-wrapper">
-            <div class="swiper-slide slide1">
+            <div class="swiper-slide slide1" data-hash="slide1">
                 <span class="icon"><img src="images/inspired.png" alt="inspired" style="width: 200px ; height:200px;
                     border-radius: 100%;"></span>
                 <p class="icon_title">INSPIRED</p>
@@ -55,7 +55,7 @@
                             alt="melancholic_play"></span>
                 </div>
             </div>
-            <div class="swiper-slide slide2">
+            <div class="swiper-slide slide2" data-hash="slide2">
                 <span class="icon"><img src="images/melancholic.png" alt="melancholic" style="width: 200px ; height:200px ;
                 border-radius: 100%;"></span>
                 <p class="icon_title">MELANCHOLIC</p>
@@ -68,7 +68,7 @@
                             alt="melancholic_play"></span>
                 </div>
             </div>
-            <div class="swiper-slide slide3">
+            <div class="swiper-slide slide3" data-hash="slide3">
                 <span class="icon"><img src="images/joy.png" alt="joy" style="width: 200px ; height:200px;
                 border-radius: 100%;"></span>
                 <p class="icon_title">JOY</p>
@@ -82,7 +82,7 @@
 
                 </div>
             </div>
-            <div class="swiper-slide slide4">
+            <div class="swiper-slide slide4" data-hash="slide4">
                 <span class="icon"><img src="images/something.png" alt="something"
                         style="width: 200px ; height:200px;"></span>
                 <input type="text" class="cat_box" placeholder="SOMETHING ELSE" style="color:#F7F9F3;">
@@ -141,19 +141,19 @@
     <script type="text/javascript">
 
         document.getElementById("ins_record").onclick = function () {
-            location.href = "record.html";
+            location.href = "record.html#slide1";
         };
 
         document.getElementById("mel_record").onclick = function () {
-            location.href = "record.html#melancholic";
+            location.href = "record.html#slide2";
         };
 
         document.getElementById("joy_record").onclick = function () {
-            location.href = "record.html#melancholic";
+            location.href = "record.html#slide3";
         };
 
         document.getElementById("ins_record").onclick = function () {
-            location.href = "record.html#melancholic";
+            location.href = "record.html#slide4";
         };
 
         document.getElementById("logo").onclick = function () {
