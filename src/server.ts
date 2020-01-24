@@ -1,4 +1,5 @@
 import * as express from 'express';
+import * as bodyParser from 'body-parser'
 
 import htmlRoutes from './routes/htmlRoutes';
 import * as cors from 'cors'
@@ -9,8 +10,8 @@ let app = express();
 var PORT = process.env.PORT || 3000;
 
 // Middleware
-app.use(express.urlencoded({ extended: false }));
-app.use(express.json());
+app.use(bodyParser.json({ limit: '50mb' }));
+app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 app.use(express.static(path.join(__dirname + '/public')));
 app.use(cors())
 //put requests in there :)
