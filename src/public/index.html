@@ -20,6 +20,8 @@
     <script src="https://unpkg.com/swiper/js/swiper.js"></script>
     <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/style.css">
 
     <title>Hey You!</title>
@@ -33,7 +35,7 @@
             <p><img src="images/mail_icon.png" alt="mail" class="mail_icon"></p>
         </nav>
         <div>
-            <p class="title">Hey You</p>
+            <p class="title" id="home">Hey You</p>
             <p class="sub_title">How are you feeling?</p>
         </div>
     </div>
@@ -45,13 +47,19 @@
                     border-radius: 100%;"></span>
                 <p class="icon_title">INSPIRED</p>
                 <div class="buttons_container">
-                    <span class="buttons"><img src="images/ins_text.png" alt="inspired_text" style="width: 70px; height: 70px;  box-shadow: 0px 2px 20px  rgba(0, 0, 0, 0.605);
+                    <!-- <span class="buttons"><img src="images/ins_text.png" alt="inspired_text" style="width: 70px; height: 70px;  box-shadow: 0px 2px 20px  rgba(0, 0, 0, 0.605);
                         border-radius: 100%;"></span>
                     <span class="buttons"><a href="record.html"><img src="images/ins_record.png" alt="inspired_record"
                                 style="width: 70px; height: 70px; box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.605);
                             border-radius: 100%;"></a></span>
                     <span class="buttons"><img src="images/ins_play.png" alt="inspired_play" style="width: 70px; height: 70px;   box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.605);
-                                border-radius: 100%;"></span>
+                                border-radius: 100%;"></span> -->
+                    <span id="ins_text" class="btn btn-dark ins_buttons"><img src="images/text.svg"
+                            alt="melancholic_text"></span>
+                    <span id="ins_record" class="btn btn-dark ins_buttons"><img src="images/record.svg"
+                            alt="melancholic_record"></span>
+                    <span id="ins_play" class="btn btn-dark ins_buttons"><img src="images/play.svg"
+                            alt="melancholic_play"></span>
                 </div>
             </div>
             <div class="swiper-slide slide2">
@@ -59,13 +67,12 @@
                 border-radius: 100%;"></span>
                 <p class="icon_title">MELANCHOLIC</p>
                 <div class="buttons_container">
-                    <span class="buttons"><img src="images/mel_text.png" alt="melancholic_text" style="width: 70px; height: 70px;  box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.605);
-                    border-radius: 100%;"></span>
-                    <span class="buttons"><img href="record.html" src="images/mel_record.png" alt="melancholic_record"
-                            style="width: 70px; height: 70px; box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.605);
-                        border-radius: 100%;"></span>
-                    <span class="buttons"><img src="images/mel_play.png" alt="melancholic_play" style="width: 70px; height: 70px;   box-shadow: 0px 2px 20px  rgba(0, 0, 0, 0.605);
-                            border-radius: 100%;"></span>
+                    <span id="mel_text" class="btn btn-dark mel_buttons"><img src="images/text.svg"
+                            alt="melancholic_text"></span>
+                    <span id="mel_record" class="btn btn-dark mel_buttons"><img src="images/record.svg"
+                            alt="melancholic_record"></span>
+                    <span id="mel_play" class="btn btn-dark mel_buttons"><img src="images/play.svg"
+                            alt="melancholic_play"></span>
                 </div>
             </div>
             <div class="swiper-slide slide3">
@@ -73,47 +80,55 @@
                 border-radius: 100%;"></span>
                 <p class="icon_title">JOY</p>
                 <div class="buttons_container">
-                    <span class="buttons"><img src="images/joy_text.png" alt="joy_text" style="width: 70px; height: 70px;  box-shadow: 0px 2px 20px  rgba(0, 0, 0, 0.605);
-                    border-radius: 100%;"></span>
-                    <span class="buttons"><img src="images/joy_record.png" alt="joy_record" style="width: 70px; height: 70px; box-shadow: 0px 2px 20px  rgba(0, 0, 0, 0.605);
-                        border-radius: 100%;"></span>
-                    <span class="buttons"><img src="images/joy_play.png" alt="joy_play" style="width: 70px; height: 70px;   box-shadow: 0px 2px 20px  rgba(0, 0, 0, 0.605);
-                            border-radius: 100%;"></span>
+                    <span id="joy_text" class="btn btn-dark joy_buttons"><img src="images/text.svg"
+                            alt="melancholic_text"></span>
+                    <span id="joy_record" class="btn btn-dark joy_buttons"><img src="images/record.svg"
+                            alt="melancholic_record"></span>
+                    <span id="joy_play" class="btn btn-dark joy_buttons"><img src="images/play.svg"
+                            alt="melancholic_play"></span>
+
                 </div>
             </div>
             <div class="swiper-slide slide4">
-                <span class="icon"><img src="images/something.png" alt="something" style="width: 200px ; height:200px ;
-                border-radius: 100%;"></span>
-                <input type="text" class="new_cat" placeholder="SOMETHING ELSE" style="color:#F7F9F3 ;">
-                <div class=" buttons_container">
-                    <span class="buttons"><img src="images/som_text.png" alt="something_text" style="width: 70px; height: 70px;  box-shadow: 0px 2px 20px  rgba(0, 0, 0, 0.605);
-                    border-radius: 100%;"></span>
-                    <span class="buttons"><img src="images/som_record.png" alt="something_record" style="width: 70px; height: 70px; box-shadow: 0px 2px 20px  rgba(0, 0, 0, 0.605);
-                        border-radius: 100%;"></span>
-                    <span class="buttons"><img src="images/som_play.png" alt="something_play" style="width: 70px; height: 70px;   box-shadow: 0px 2px 20px  rgba(0, 0, 0, 0.605);
-                            border-radius: 100%;"></span>
+                <span class="icon"><img src="images/something.png" alt="something"
+                        style="width: 200px ; height:200px;"></span>
+                <input type="text" class="cat_box" placeholder="SOMETHING ELSE" style="color:#F7F9F3;">
+                <div class="buttons_container">
+                    <span id="som_text" class="btn btn-dark som_buttons"><img src="images/text.svg"
+                            alt="something_text"></span>
+                    <span id="som_record" class="btn btn-dark som_buttons"><img src="images/record.svg"
+                            alt="something_record"></span>
+                    <span id="som_play" class="btn btn-dark som_buttons"><img src="images/play.svg"
+                            alt="something_play"></span>
                 </div>
             </div>
 
         </div>
-        <!-- Add Arrows -->
-        <!-- <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div> -->
+
     </div>
-    <!-- Swiper JS -->
-    <!-- <script src="../package/js/swiper.min.js"></script> -->
 
     <!-- Initialize Swiper -->
     <script>
+
         var swiper = new Swiper('.swiper-container', {
+
+
+            slideToClickedSlide: false,
+
             navigation: {
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
             },
+
+            hashNavigation: {
+                replaceState: true,
+            },
+
             effect: 'fade',
             fadeEffect: {
                 crossFade: false
             }
+
         });
 
         $(window).ready(function () {
@@ -126,13 +141,36 @@
         });
 
 
+
+
     </script>
+
+    <script type="text/javascript">
+
+        document.getElementById("ins_record").onclick = function () {
+            location.href = "record.html";
+        };
+
+        document.getElementById("mel_record").onclick = function () {
+            location.href = "record.html#melancholic";
+        };
+
+        document.getElementById("joy_record").onclick = function () {
+            location.href = "record.html#melancholic";
+        };
+
+        document.getElementById("ins_record").onclick = function () {
+            location.href = "record.html#melancholic";
+        };
+
+        document.getElementById("logo").onclick = function () {
+            location.href = "index.html";
+        };
+    </script>
+
 </body>
 
 </html>
-
-
-
 
 
 
