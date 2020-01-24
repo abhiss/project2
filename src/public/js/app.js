@@ -82,14 +82,14 @@ class App {
     const newIdx = this.recordingsCont.childNodes.length + 1
 
     const newEl = document.createElement('div')
-    newEl.innerHTML = '<audio id="audio-recording-' + newIdx + '" controls></audio>'
+    newEl.innerHTML = '<audio id="audio-recording-' + newIdx + '" controls style="width:250px; margin:auto;"></audio>'
     this.recordingsCont.appendChild(newEl)
 
     const recordingEl = document.getElementById("audio-recording-" + newIdx);
     recordingEl.src = evt.detail.recording.blobUrl
     recordingEl.type = evt.detail.recording.mimeType
     //test
-    
+
     //endtest
   }
 }

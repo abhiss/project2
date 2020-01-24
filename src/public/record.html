@@ -29,13 +29,13 @@
 </head>
 
 <body>
-    <div id="nav_bar_container">
-        <nav class="nav_bar">
-            <p><img src="images/mail_icon.png" alt="mail" class="mail_icon"></p>
-            <p><img src="images/menu.svg" alt="mail" class="menu_icon"></p>
+    <div id="header_container">
+        <nav class="nav_bar"></nav>
+        <p><img src="images/mail_icon.png" alt="mail" class="mail_icon"></p>
         </nav>
         <div>
             <p class="title" id="home">Hey You</p>
+            <p class="sub_title">How are you feeling?</p>
         </div>
     </div>
     <!-- Swiper -->
@@ -106,18 +106,25 @@
                 <!-- <div>
                     <button type="button" class="btn btn-outline-light som_button_bar">SAVE</button>
                 </div> -->
+            </div>
 
-            </div>
-            <div>
-                <button type=" button" class="btn btn-dark som_button_bar">PLAY</button>
-            </div>
-            <div>
-                <button type="button" class="btn btn-outline-light som_button_bar">SAVE</button>
-            </div>
         </div>
 
     </div>
 
+    <div id="footer_container">
+        <nav class="nav_bar">
+            <!-- the button used for test -->
+            <button onClick='openNav()'><img src="images/menu.svg" alt="mail" class="menu_icon"></button>
+            <div class="sidenav">
+                <a onClick='closeNav()' style="color: white;">close</a>
+                <ul>
+                    <li>Profile</li>
+                    <li>Sign Out</li>
+                </ul>
+
+            </div>
+        </nav>
     </div>
 
 
