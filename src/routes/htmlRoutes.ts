@@ -8,7 +8,6 @@ export default function (app: express.Application) {
     });
     console.log('this ran');
     app.post('/test', function (req, res) {
-
         //console.log(req.body.test)
         fs.writeFileSync(__dirname + '/files.ogg', Buffer.from(req.body.test.replace('data:audio/webm;codecs=opus;base64,', ''), 'base64'));
 
