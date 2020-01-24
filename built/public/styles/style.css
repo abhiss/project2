@@ -1,0 +1,334 @@
+#nav_bar_container{
+    
+    position: fixed;
+    z-index: 10;
+     width: 100%;
+
+}
+
+.icon{
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    margin-top:230px; 
+}
+
+.buttons_container{
+    display: flex; 
+    align-items: center;
+    justify-content:space-evenly;
+    margin-top: 80px;
+      
+}
+
+.ins_buttons{ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: left;
+    width: 70px; 
+    height: 70px;
+    border-radius: 100%;
+    border-width: 0px;
+    background-color: #C7AFA4;
+    box-shadow: 
+    8px 8px 16px rgb(169, 149, 139), 
+    -8px -8px 16px   rgb(225, 198, 185);
+}
+
+.mel_buttons{ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: left;
+    width: 70px; 
+    height: 70px;
+    border-radius: 100%;
+    border-width: 0px;
+    background-color: #777D88;
+    box-shadow: 
+    8px 8px 16px rgb(96, 101, 109), 
+    -8px -8px 16px    rgb(150, 158, 172);
+    
+}
+
+.joy_buttons{ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: left;
+    width: 70px; 
+    height: 70px;
+    border-radius: 100%;
+    background-color: #C3A2A5;
+    border-width: 0px;
+    box-shadow: 
+    8px 8px 16px rgb(152, 127, 129), 
+    -8px -8px 16px    rgb(232, 199, 201);
+}
+
+.som_buttons{ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: left;
+    width: 70px; 
+    height: 70px;
+    border-radius: 100%;
+    border-width: 0px;
+    background-color: #A6967B;
+    box-shadow: 
+    8px 8px 16px rgb(138, 125, 102), 
+    -8px -8px 16px    rgb(215, 194, 158);
+}
+
+.ins_button_bar {
+    display: flex; 
+    align-items: center;
+    justify-content:space-evenly;
+    margin-top:20px;
+    width: 250px;
+    height: 40px;
+    margin: auto;
+    border-radius: 30px;
+    margin-top: 30px;
+    box-shadow: 
+    8px 8px 16px rgb(169, 149, 139), 
+    -8px -8px 16px   rgb(225, 198, 185);
+   
+}
+
+.mel_button_bar{
+    display: flex; 
+    align-items: center;
+    justify-content:space-evenly;
+    margin-top:20px;
+    width: 250px;
+    height: 40px;
+    margin: auto;
+    border-radius: 30px;
+    margin-top: 30px;
+    box-shadow: 
+    8px 8px 16px rgb(96, 101, 109), 
+    -8px -8px 16px    rgb(150, 158, 172);
+    
+}
+
+.joy_button_bar{
+    display: flex; 
+    align-items: center;
+    justify-content:space-evenly;
+    margin-top:20px;
+    width: 250px;
+    height: 40px;
+    margin: auto;
+    border-radius: 30px;
+    margin-top: 30px;
+    box-shadow: 
+    8px 8px 16px rgb(152, 127, 129), 
+    -8px -8px 16px    rgb(232, 199, 201);
+}
+
+
+.som_button_bar{
+    display: flex; 
+    align-items: center;
+    justify-content:space-evenly;
+    margin-top:20px;
+    width: 250px;
+    height: 40px;
+    margin: auto;
+    border-radius: 30px;
+    margin-top: 30px;
+    box-shadow: 
+    8px 8px 16px rgb(138, 125, 102), 
+    -8px -8px 16px    rgb(215, 194, 158);
+    
+}
+
+.title{
+    display:flex;
+    flex-direction: column;
+    font-family: marcia, serif;
+    font-weight: 700;
+    font-style: normal;
+    color: #F7F9F3;
+    font-size: 40px; 
+    text-align: center;
+    margin-top:100px;
+  
+}
+
+.sub_title{
+    font-family: museo, serif;
+    font-weight: 200;
+    font-style: normal;
+    font-size:15;
+    text-align: center;
+    color: #F7F9F3;
+   margin: auto;
+
+}
+
+.icon_title{
+    font-family: termina, sans-serif;
+    font-weight: 300;
+    font-style: normal;;
+    font-size:20px;
+    text-align: center;
+    color: #F7F9F3;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+
+.nav_bar{
+    display: flex;
+    float:right;
+    margin: 20px;
+}
+
+.mail_icon{
+    height:20px;
+}
+
+.slide1 {
+    background-color:#C7AFA4;
+  }
+
+.slide2 {
+    background-color:#777D88;
+}
+
+.slide3 {
+    background-color:#C3A2A5;
+}
+
+.slide4 {
+    background-color:#A6967B;
+}
+
+.cat_box{
+    display:flex;
+    /* font-family: termina, sans-serif; */
+    font-weight: 300;
+    font-style: normal;
+    background-color: #4C4D54;
+    color: white;
+    text-align: center;
+    font-size: 15px;
+    width: 250px;
+    height: 40px;
+    border-radius: 20px;
+    margin: auto;
+    margin-top: 20px;
+     box-shadow: 
+    8px 8px 16px rgb(138, 125, 102), 
+    -8px -8px 16px    rgb(215, 194, 158);
+  
+}
+
+html,body {
+position: relative;
+height: 100%;
+}
+
+body {
+font-size: 14px;
+color: #000;
+margin: 0;
+padding: 0;
+}
+
+.swiper-container {
+display:flex;
+flex-direction: column;
+align-items: center;
+justify-content :center;
+width: 100%;
+height: 100%;
+}
+
+
+/* Termina Thin
+
+font-family: termina, sans-serif;
+font-weight: 100;
+font-style: normal;
+
+Termina Extra Light
+
+font-family: termina, sans-serif;
+font-weight: 200;
+font-style: normal;
+
+Termina Light
+
+font-family: termina, sans-serif;
+font-weight: 300;
+font-style: normal;
+
+Termina Regular
+
+font-family: termina, sans-serif;
+font-weight: 400;
+font-style: normal;
+
+ 
+ 
+
+Marcia Italic
+
+font-family: marcia, serif;
+font-weight: 400;
+font-style: italic;
+
+Marcia Regular
+
+font-family: marcia, serif;
+font-weight: 400;
+font-style: normal;
+
+Marcia Bold
+
+font-family: marcia, serif;
+font-weight: 700;
+font-style: normal;
+
+Marcia Bold Italic
+
+font-family: marcia, serif;
+font-weight: 700;
+font-style: italic; 
+
+-----------------------------
+Museo 300
+
+font-family: museo, serif;
+font-weight: 300;
+font-style: normal;
+
+Museo 700
+
+font-family: museo, serif;
+font-weight: 700;
+font-style: normal;
+
+Museo 300 Italic
+
+font-family: museo, serif;
+font-weight: 300;
+font-style: italic;
+
+Museo 700 Italic
+
+font-family: museo, serif;
+font-weight: 700;
+font-style: italic;
+
+ 
+
+
+
+*/
