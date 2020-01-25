@@ -5,7 +5,7 @@ audio{
 
 html,body {
     position: relative;
-    height: 90vh;
+    height: 100vh;
     overflow: hidden;
     background-color: black;
 }
