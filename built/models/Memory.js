@@ -15,17 +15,16 @@ var __extends = (this && this.__extends) || (function () {
 exports.__esModule = true;
 var _a = require('sequelize'), Sequelize = _a.Sequelize, Model = _a.Model, DataTypes = _a.DataTypes;
 var sequelize = require('../config/config');
-var Post = (function (_super) {
-    __extends(Post, _super);
-    function Post() {
+var Memory = (function (_super) {
+    __extends(Memory, _super);
+    function Memory() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
-    return Post;
+    return Memory;
 }(Model));
-Post.init({
-    title: DataTypes.STRING,
+Memory.init({
     body: DataTypes.STRING
 }, {
     sequelize: sequelize
 });
-module.exports = Post;
+module.exports = Memory;
