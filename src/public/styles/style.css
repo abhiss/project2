@@ -31,9 +31,8 @@ button {
     position: absolute;
     z-index: 33;
     width: 100%;
-    overflow: visible;
     -webkit-overflow-scrolling: touch;
-    -webkit-overflow-scrolling: scroll;
+    -webkit-overflow-scrolling: scrolling;
   
 }
 
@@ -415,7 +414,6 @@ button {
     width: 100%;
     position: fixed;
     z-index: 9999;
-    -webkit-z-
     bottom: 0;
     top:30;
     left: 0;
