@@ -30,9 +30,7 @@
 
 <body>
     <div id="header_container" class="slide4">
-        <nav class="nav_bar"></nav>
-        <p><img src="images/mail_icon.png" alt="mail" class="mail_icon"></p>
-        </nav>
+
         <div>
             <p class="title" id="home">Hey You</p>
             <p class="sub_title">Create an Account</p>
@@ -68,88 +66,7 @@
         </div>
     </div>
 
-    <div id="footer_container">
-        <nav class="nav_bar">
-            <!-- the button used for test -->
-            <a onClick='openNav()'><img src="images/menu.svg" alt="mail" class="menu_icon"></a>
-            <div class="sidenav">
-                <p onClick='closeNav()'><img src="images/close_arrow.svg" alt="close" style="height: 10px; width: 40px"
-                        ;></p>
 
-                <p>PROFILE</p>
-                <hr style="width: 80vw;">
-                <p>SIGN OUT</p>
-            </div>
-        </nav>
-    </div>
-    <!-- Initialize Swiper -->
-    <script>
-
-        var swiper = new Swiper('.swiper-container', {
-
-
-            slideToClickedSlide: false,
-
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-
-            hashNavigation: {
-                replaceState: true,
-            },
-
-            effect: 'fade',
-            fadeEffect: {
-                crossFade: false
-            },
-
-
-
-        });
-
-        $(window).ready(function () {
-
-            var wHeight = $(window).height();
-
-            $('.slide')
-                .height(wHeight)
-
-        });
-
-
-
-
-    </script>
-
-    <script type="text/javascript">
-
-        document.getElementById("ins_save").onclick = function () {
-            location.href = "home.html#slide1";
-        };
-        document.getElementById("mel_save").onclick = function () {
-            location.href = "home.html#slide2";
-        };
-        document.getElementById("joy_save").onclick = function () {
-            location.href = "home.html#slide3";
-        };
-        document.getElementById("som_save").onclick = function () {
-            location.href = "home.html#slide4";
-        };
-        document.getElementById("home").onclick = function () {
-            location.href = "home.html";
-        };
-        function openNav() {
-            document.querySelector(".sidenav").style.height = "175px";
-            document.querySelector(".sidenav").style.paddingTop = "10px";
-            document.querySelector(".footer_container").style.height = "0";
-        }
-        function closeNav() {
-            document.querySelector(".sidenav").style.height = "0";
-            document.querySelector(".sidenav").style.paddingTop = "0";
-        }
-
-    </script>
     <script src="/javascript/signup.js"></script>
 
 
