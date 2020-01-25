@@ -15,26 +15,16 @@ var __extends = (this && this.__extends) || (function () {
 exports.__esModule = true;
 var _a = require('sequelize'), Sequelize = _a.Sequelize, Model = _a.Model, DataTypes = _a.DataTypes;
 var sequelize = require('../config/config');
-var User = (function (_super) {
-    __extends(User, _super);
-    function User() {
+var Memory = (function (_super) {
+    __extends(Memory, _super);
+    function Memory() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
-    return User;
+    return Memory;
 }(Model));
-exports["default"] = User.init({
-    username: {
-        type: DataTypes.STRING,
-        allowNull: false
-    },
-    password: {
-        type: DataTypes.STRING,
-        allowNull: false
-    },
-    isAdmin: {
-        type: DataTypes.BOOLEAN,
-        defaultValue: false
-    }
+Memory.init({
+    body: DataTypes.STRING
 }, {
     sequelize: sequelize
 });
+module.exports = Memory;
