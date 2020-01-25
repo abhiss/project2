@@ -5,13 +5,14 @@ const sequelize = require('./config/config');
 
 
 import htmlRoutes from './routes/htmlRoutes';
+import * as user from './routes/user';
 import * as cors from 'cors'
 //var db = require("./models");
 import * as path from 'path'
 
 let app = express();
 var sess = {
-  secret: "Super secret secret",
+  secret: process.env.APP_SECRET,
   cookie: {
     secure: false
   }
@@ -33,8 +34,9 @@ app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 app.use(express.static(path.join(__dirname + '/public')));
 app.use(cors())
 //put requests in there :)
-app.use(require('./routes/'));
-// htmlRoutes(app)
+//app.use(require('./routes'));
+htmlRoutes(app)
+
 
 app.listen(PORT, function () {
   console.log("Server listening on port: " + PORT);
