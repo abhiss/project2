@@ -29,48 +29,42 @@
 </head>
 
 <body>
-    <div id="header_container">
+    <div id="header_container" class="slide4">
         <nav class="nav_bar"></nav>
         <p><img src="images/mail_icon.png" alt="mail" class="mail_icon"></p>
         </nav>
         <div>
             <p class="title" id="home">Hey You</p>
-            <p class="sub_title">Welcome!</p>
+            <p class="sub_title">Create an Account</p>
+        </div>
+        <div id="login_container">
+            <div id="signup" role="tabpanel">
+                <form id="signup-form">
+                    <div class="form-container">
+                        <input type="text" id="name-input-signup" class="cat_box" placeholder="What should I call you?"
+                            style="color:#F7F9F3; margin-top: 5vmin; background-color: white;">
+                        <hr width="200px">
+                        <a class="text">In order to authenticate you,<br> please provide the following</a>
+                        <input type="text" id="username-input-signup" class="cat_box" placeholder="enter your email"
+                            style="color:#F7F9F3; margin-top: 5vmin; background-color: white;">
+                        <input type="text" id="password-input-signup" class="cat_box" placeholder="create a password"
+                            style="color:#F7F9F3; margin-top: 5vmin; background-color: white;">
+                        <br>
+                        <button type="submit" id="signup-btn" class="btn btn-outline-light som_button_bar">SAVE</button>
+
+                    </div>
+                    <div>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
     <!-- Swiper -->
     <div class="swiper-container">
         <div class="swiper-wrapper">
-            <div class="swiper-slide slide1" data-hash="slide1">
-                <div class="card">
-                    <div class="card-header">
-                        <h2>Sign Up</h2>
-                    </div>
-                    <div id="signup" role="tabpanel">
-                        <form id="signup-form" class="card-body">
-                            <div>
-                                <label for="username-input-signup">Username</label>
-                                <input type="text" id="username-input-signup" />
-                            </div>
-                            <div>
-                                <label for="password-input-signup">Password</label>
-                                <input type="password" id="password-input-signup" />
-                            </div>
-                            <button type="submit" id="signup-btn" class="btn">Signup!</button>
-                            <a href="/login">Login instead</a>
-                        </form>
-                    </div>
-                </div>
-
-                <script src="/javascript/signup.js"></script>
-
+            <div class="swiper-slide slide4" data-hash="slide1">
             </div>
-
-
-
-
         </div>
-
     </div>
 
     <div id="footer_container">
@@ -155,6 +149,7 @@
         }
 
     </script>
+    <script src="/javascript/signup.js"></script>
 
 
 </body>
