@@ -10,7 +10,7 @@ var cors = require("cors");
 var path = require("path");
 var app = express();
 var sess = {
-    secret: process.env.APP_SECRET,
+    secret: 'ssmpcsvfitnrwoufbignfjcn',
     cookie: {
         secure: false
     }
