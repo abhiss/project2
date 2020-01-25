@@ -89,7 +89,9 @@
             <div class="sidenav">
                 <p onClick='closeNav()'><img src="images/close_arrow.svg" alt="close" style="height: 10px; width: 40px"
                         ;></p>
+
                 <p>Profile</p>
+                <hr style="width: 80vw;">
                 <p>Sign Out</p>
             </div>
         </nav>
@@ -153,8 +155,8 @@
             location.href = "index.html";
         };
         function openNav() {
-            document.querySelector(".sidenav").style.height = "25vh";
-            document.querySelector(".sidenav").style.paddingTop = "20px";
+            document.querySelector(".sidenav").style.height = "175px";
+            document.querySelector(".sidenav").style.paddingTop = "10px";
             document.querySelector(".footer_container").style.height = "0";
         }
         function closeNav() {
