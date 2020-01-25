@@ -3,7 +3,7 @@ const sequelize = require('../config/config');
 
 class User extends Model { }
 
-User.init(
+export default User.init(
   {
     username: {
       type: DataTypes.STRING,
@@ -23,4 +23,3 @@ User.init(
   }
 );
 
-module.exports = User;
