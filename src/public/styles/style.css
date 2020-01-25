@@ -14,7 +14,7 @@
 #recordings-cont {
     display: flex;
     flex-direction: column;
-    z-index: 9999;
+    z-index: 99;
     text-align: center;
     margin: auto;
 }
@@ -25,7 +25,7 @@
     display: flex;
     justify-content:center;
     align-items:center;
-    width: 150px ; 
+    width: 15   0px ; 
     height:150px;
     margin: auto;
     margin-top: 25vh;
@@ -313,7 +313,26 @@ audio{
     box-shadow: 
     8px 8px 16px rgb(138, 125, 102), 
     -8px -8px 16px    rgb(215, 194, 158);
-  
+
+}
+
+.search_box{
+    display:flex;
+    /* align-items: flex-start; */
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    background-color: rgb(255, 255, 255);
+    color: white;
+    text-align: center;
+    font-size: 15px;
+    width: 250px;
+    height: 40px;
+    border-radius: 20px;
+    margin: auto;
+    box-shadow: 
+    8px 8px 16px rgba(79, 79, 79, 0.434), 
+    -8px -8px 16px    rgba(255, 255, 255, 0.564);
 }
 
 .text_box{
