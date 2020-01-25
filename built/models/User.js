@@ -1,3 +1,4 @@
+"use strict";
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -11,6 +12,7 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+exports.__esModule = true;
 var _a = require('sequelize'), Sequelize = _a.Sequelize, Model = _a.Model, DataTypes = _a.DataTypes;
 var sequelize = require('../config/config');
 var User = (function (_super) {
@@ -20,7 +22,7 @@ var User = (function (_super) {
     }
     return User;
 }(Model));
-User.init({
+exports["default"] = User.init({
     username: {
         type: DataTypes.STRING,
         allowNull: false
@@ -36,4 +38,3 @@ User.init({
 }, {
     sequelize: sequelize
 });
-module.exports = User;
