@@ -31,6 +31,7 @@ button {
     position: absolute;
     z-index: 33;
     width: 100%;
+  
 }
 
 #header_container{
@@ -299,7 +300,7 @@ button {
     height:10vh;
     bottom: 0;
     width: 100%;
-    background-color: black;
+    background-color: #4C4D54;
     /* margin: 5vmax; */
 
 }
@@ -411,6 +412,7 @@ button {
     width: 100%;
     position: fixed;
     z-index: 9999;
+    -webkit-z-
     bottom: 0;
     top:30;
     left: 0;
@@ -420,13 +422,15 @@ button {
     padding-top:0;
     text-align:center;
     margin-top: 30px;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    font-family: 'Roboto', sans-serif;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    font-family: termina, sans-serif;
+    font-weight: 400;
+    font-style: normal;
     font-size: 1.2em;
     color: white;
-    box-shadow: inset
-   -0px -8px 9px rgba(0, 0, 0, 0.42);
+    /* box-shadow: inset
+   -0px -8px 9px rgba(0, 0, 0, 0.42); */
 
     }
 

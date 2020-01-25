@@ -47,69 +47,24 @@
     <div class="swiper-container">
         <div class="swiper-wrapper">
             <div class="swiper-slide slide1" data-hash="slide1">
-                <p class="icon_title" style="margin-top: 18vh">INSPIRED</p>
-                <div>
-                    <ul class="list-inline list">
-                        <li class="list-inline-item"><a class="list" href="#">Recents</a>
-                        </li>
+                <div class="swiper-slide">
+                    <div class="swiper-container swiper-container-v">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">Vertical Slide 1</div>
+                            <div class="swiper-slide">Vertical Slide 2</div>
+                            <div class="swiper-slide">Vertical Slide 3</div>
+                            <div class="swiper-slide">Vertical Slide 4</div>
+                            <div class="swiper-slide">Vertical Slide 5</div>
+                        </div>
+                        <div class="swiper-pagination swiper-pagination-v"></div>
 
-                        <li class="list-inline-item list"><a class="list" href="#"><b>Favorites</b></a>
-                        </li>
-
-                        <li class="list-inline-item list"><a class="list" href="#">Recieved</a>
-                        </li>
-                    </ul>
-                    <div class="results_wrapper">
-                        <p class="results_container">
-                            <span class="results">Nothing is more important than Family</span>
-                            <span class="date"> 1988.Oct.12 16:23</span>
-                        </p>
-                        <p class="results_container">
-                            <span class="results">Get off your butt!</span>
-                            <span class="date"> 1992.Oct.12 16:23</span>
-                        </p>
-                        <p class="results_container">
-                            <span class="results">You have more worth than you know</span>
-                            <span class="date"> 2010.Jan.11 10:23</span>
-                        </p>
-                        <p class="results_container">
-                            <span class="results">You're going to Japan, someday.</span>
-                            <span class="date"> 1999.Mar.02 02:23</span>
-                        </p>
-                        <p class="results_container">
-                            <span class="results">The answer is always yes</span>
-                            <span class="date"> 2013.07.12 16:23</span>
-                        </p>
-                        <p class="results_container">
-                            <span class="results" style="background-color: rgba(122, 102, 142, 0.317);">Hi Daddy, I
-                                can't wait until you
-                                come home.</span>
-                            <span class="date"> 2019.Dec.12 16:23</span>
-                        </p>
-                        <p class="results_container">
-                            <span class="results">Have a coke and smile</span>
-                            <span class="date"> 1988.Oct.12 16:23</span>
-                        </p>
-                        <p class="results_container">
-                            <span class="results">Smile and the world smiles with you</span>
-                            <span class="date"> 1988.Oct.12 16:23</span>
-                        </p>
                     </div>
                 </div>
             </div>
             <div class="swiper-slide slide2" data-hash="slide2">
                 <p class="icon_title" style="margin-top: 18vh">MELANCHOLIC</p>
                 <div>
-                    <ul class="list-inline list">
-                        <li class="list-inline-item"><a class="list" href="#">Recents</a>
-                        </li>
 
-                        <li class="list-inline-item list"><a class="list" href="#"><b>Favorites</b></a>
-                        </li>
-
-                        <li class="list-inline-item list"><a class="list" href="#">Recieved</a>
-                        </li>
-                    </ul>
                     <div class="results_wrapper">
                         <p class="results_container">
                             <span class="results">Nothing is more important than Family</span>
@@ -274,13 +229,6 @@
 
         var swiper = new Swiper('.swiper-container', {
 
-
-
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-
             hashNavigation: {
                 replaceState: true,
             },
@@ -290,10 +238,19 @@
                 crossFade: false
             },
 
-
-            loop: true
+            // loop: true
 
         });
+
+        var swiperV = new Swiper('.swiper-container-v', {
+            direction: 'vertical',
+            spaceBetween: 50,
+            pagination: {
+                el: '.swiper-pagination-v',
+                clickable: true,
+            },
+        });
+
 
         $(window).ready(function () {
 
