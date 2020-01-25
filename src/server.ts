@@ -12,7 +12,7 @@ import * as path from 'path'
 
 let app = express();
 var sess = {
-  secret: 'ssmpcsvfitnrwoufbignfjcn',
+  secret: process.env.APP_SECRET,
   cookie: {
     secure: false
   }
