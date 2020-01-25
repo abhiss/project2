@@ -1,113 +1,113 @@
 "use strict";
 
 class App {
-  constructor() {
-    this.btnRecord = document.getElementById('btn-record');
-    this.btnStop = document.getElementById('btn-stop');
+    constructor() {
+        this.btnRecord = document.getElementsByClassName('btn-record');
+        this.btnStop = document.getElementById('btn-stop');
 
-    this.debugTxt = document.getElementById('debug-txt')
+        this.debugTxt = document.getElementById('debug-txt')
 
-    this.recordingsCont = document.getElementById('recordings-cont')
+        this.recordingsCont = document.getElementById('recordings-cont')
 
-    this.isRecording = false
-    this.saveNextRecording = false
+        this.isRecording = false
+        this.saveNextRecording = false
 
-    this.debugTxt.innerHTML = "stopped"
-  }
-
-  init() {
-    this._initEventListeners()
-  }
-
-  _initEventListeners() {
-
-    this.btnRecord.addEventListener('click', evt => {
-      this._stopAllRecording()
-      this.saveNextRecording = true
-      this._startRecording()
-
-      this.btnRecord.disabled = true
-      this.btnStop.disabled = false
-      this.debugTxt.innerHTML = "recording"
-    })
-
-    this.btnStop.addEventListener('click', evt => {
-      this._stopAllRecording();
-
-      this.btnRecord.disabled = false
-      this.btnStop.disabled = true
-      this.debugTxt.innerHTML = "stopped"
-    })
-  }
-
-  _startRecording() {
-    if (!this.recorderSrvc) {
-      this.recorderSrvc = new RecorderService()
-      this.recorderSrvc.em.addEventListener('recording', (evt) => this._onNewRecording(evt))
+        this.debugTxt.innerHTML = "stopped"
     }
 
-    if (!this.webAudioPeakMeter) {
-      this.webAudioPeakMeter = new WebAudioPeakMeter()
-      this.meterEl = document.getElementById('recording-meter')
+    init() {
+        this._initEventListeners()
     }
 
-    this.recorderSrvc.onGraphSetupWithInputStream = (inputStreamNode) => {
-      this.meterNodeRaw = this.webAudioPeakMeter.createMeterNode(inputStreamNode, this.recorderSrvc.audioCtx)
-      this.webAudioPeakMeter.createMeter(this.meterEl, this.meterNodeRaw, {})
+    _initEventListeners() {
+
+        this.btnRecord.addEventListener('click', evt => {
+            this._stopAllRecording()
+            this.saveNextRecording = true
+            this._startRecording()
+
+            this.btnRecord.disabled = true
+            this.btnStop.disabled = false
+            this.debugTxt.innerHTML = "recording"
+        })
+
+        this.btnStop.addEventListener('click', evt => {
+            this._stopAllRecording();
+
+            this.btnRecord.disabled = false
+            this.btnStop.disabled = true
+            this.debugTxt.innerHTML = "stopped"
+        })
     }
 
-    this.recorderSrvc.startRecording()
-    this.isRecording = true
-    this.debugTxt.innerHTML = "recording..."
-  }
+    _startRecording() {
+        if (!this.recorderSrvc) {
+            this.recorderSrvc = new RecorderService()
+            this.recorderSrvc.em.addEventListener('recording', (evt) => this._onNewRecording(evt))
+        }
 
-  _stopAllRecording() {
-    if (this.recorderSrvc && this.isRecording) {
+        if (!this.webAudioPeakMeter) {
+            this.webAudioPeakMeter = new WebAudioPeakMeter()
+            this.meterEl = document.getElementById('recording-meter')
+        }
 
-      this.recorderSrvc.stopRecording()
-      this.isRecording = false
+        this.recorderSrvc.onGraphSetupWithInputStream = (inputStreamNode) => {
+            this.meterNodeRaw = this.webAudioPeakMeter.createMeterNode(inputStreamNode, this.recorderSrvc.audioCtx)
+            this.webAudioPeakMeter.createMeter(this.meterEl, this.meterNodeRaw, {})
+        }
 
-      if (this.meterNodeRaw) {
-        this.meterNodeRaw.disconnect()
-        this.meterNodeRaw = null
-        this.meterEl.innerHTML = ''
-      }
+        this.recorderSrvc.startRecording()
+        this.isRecording = true
+        this.debugTxt.innerHTML = "recording..."
     }
-  }
 
-  _onNewRecording(evt) {
-    if (!this.saveNextRecording) {
-      return
+    _stopAllRecording() {
+        if (this.recorderSrvc && this.isRecording) {
+
+            this.recorderSrvc.stopRecording()
+            this.isRecording = false
+
+            if (this.meterNodeRaw) {
+                this.meterNodeRaw.disconnect()
+                this.meterNodeRaw = null
+                this.meterEl.innerHTML = ''
+            }
+        }
     }
-    const newIdx = this.recordingsCont.childNodes.length + 1
 
-    const newEl = document.createElement('div')
-    newEl.innerHTML = '<audio id="audio-recording-' + newIdx + '" controls></audio>'
-    this.recordingsCont.appendChild(newEl)
+    _onNewRecording(evt) {
+        if (!this.saveNextRecording) {
+            return
+        }
+        const newIdx = this.recordingsCont.childNodes.length + 1
 
-    const recordingEl = document.getElementById("audio-recording-" + newIdx);
-    recordingEl.src = evt.detail.recording.blobUrl
-    recordingEl.type = evt.detail.recording.mimeType
-    //test
-    
-    //endtest
-  }
+        const newEl = document.createElement('div')
+        newEl.innerHTML = '<audio id="audio-recording-' + newIdx + ' controls" style="width:250px; margin:auto;"></audio>'
+        this.recordingsCont.appendChild(newEl)
+
+        const recordingEl = document.getElementById("audio-recording-" + newIdx);
+        recordingEl.src = evt.detail.recording.blobUrl
+        recordingEl.type = evt.detail.recording.mimeType
+        //test
+
+        //endtest
+    }
 }
 //test
 async function postData(url = '', data = {}) {
-  // Default options are marked with *
-  const response = await fetch(url, {
-    method: 'POST', // *GET, POST, PUT, DELETE, etc.
-    mode: 'cors', // no-cors, *cors, same-origin
-    cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-    credentials: 'same-origin', // include, *same-origin, omit
-    headers: {
-      'Content-Type': 'application/json'
-      // 'Content-Type': 'application/x-www-form-urlencoded',
-    },
-    redirect: 'follow', // manual, *follow, error
-    referrerPolicy: 'no-referrer', // no-referrer, *client
-    body: JSON.stringify(data) // body data type must match "Content-Type" header
-  });
-  return await response.json(); // parses JSON response into native JavaScript objects
+    // Default options are marked with *
+    const response = await fetch(url, {
+        method: 'POST', // *GET, POST, PUT, DELETE, etc.
+        mode: 'cors', // no-cors, *cors, same-origin
+        cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+        credentials: 'same-origin', // include, *same-origin, omit
+        headers: {
+            'Content-Type': 'application/json'
+            // 'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        redirect: 'follow', // manual, *follow, error
+        referrerPolicy: 'no-referrer', // no-referrer, *client
+        body: JSON.stringify(data) // body data type must match "Content-Type" header
+    });
+    return await response.json(); // parses JSON response into native JavaScript objects
 }

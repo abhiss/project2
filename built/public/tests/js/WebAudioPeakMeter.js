@@ -3,7 +3,7 @@
  * Modified to class form to allow multiple instances on a page.
  */
 class WebAudioPeakMeter {
-  constructor () {
+  constructor() {
     this.options = {
       borderSize: 2,
       fontSize: 9,
@@ -28,15 +28,15 @@ class WebAudioPeakMeter {
     this.channelPeakLabels = []
   }
 
-  getBaseLog (x, y) {
+  getBaseLog(x, y) {
     return Math.log(y) / Math.log(x)
   }
 
-  dbFromFloat (floatVal) {
+  dbFromFloat(floatVal) {
     return this.getBaseLog(10, floatVal) * 20
   }
 
-  setOptions (userOptions) {
+  setOptions(userOptions) {
     for (var k in userOptions) {
       this.options[k] = userOptions[k]
     }
@@ -44,7 +44,7 @@ class WebAudioPeakMeter {
     this.meterTop = this.options.fontSize * 1.5 + this.options.borderSize
   }
 
-  createMeterNode (sourceNode, audioCtx) {
+  createMeterNode(sourceNode, audioCtx) {
     var c = sourceNode.channelCount
     var meterNode = audioCtx.createScriptProcessor(2048, c, c)
     sourceNode.connect(meterNode)
@@ -52,7 +52,7 @@ class WebAudioPeakMeter {
     return meterNode
   }
 
-  createContainerDiv (parent) {
+  createContainerDiv(parent) {
     var meterElement = document.createElement('div')
     meterElement.style.position = 'relative'
     meterElement.style.width = this.elementWidth + 'px'
@@ -62,7 +62,7 @@ class WebAudioPeakMeter {
     return meterElement
   }
 
-  createMeter (domElement, meterNode, optionsOverrides) {
+  createMeter(domElement, meterNode, optionsOverrides) {
     this.setOptions(optionsOverrides)
     this.elementWidth = domElement.clientWidth
     this.elementHeight = domElement.clientHeight
@@ -98,7 +98,7 @@ class WebAudioPeakMeter {
     }, false)
   }
 
-  createTicks (parent) {
+  createTicks(parent) {
     var numTicks = Math.floor(this.options.dbRange / this.options.dbTickSize)
     var dbTickLabel = 0
     var dbTickTop = this.options.fontSize + this.options.borderSize
@@ -117,7 +117,7 @@ class WebAudioPeakMeter {
     }
   }
 
-  createRainbow (parent, width, height, top, left) {
+  createRainbow(parent, width, height, top, left) {
     var rainbow = document.createElement('div')
     parent.appendChild(rainbow)
     rainbow.style.width = width + 'px'
@@ -130,7 +130,7 @@ class WebAudioPeakMeter {
     return rainbow
   }
 
-  createPeakLabel (parent, width, left) {
+  createPeakLabel(parent, width, left) {
     var label = document.createElement('div')
     parent.appendChild(label)
     label.style.width = width + 'px'
@@ -144,7 +144,7 @@ class WebAudioPeakMeter {
     return label
   }
 
-  createChannelMask (parent, width, top, left, transition) {
+  createChannelMask(parent, width, top, left, transition) {
     var channelMask = document.createElement('div')
     parent.appendChild(channelMask)
     channelMask.style.width = width + 'px'
@@ -159,7 +159,7 @@ class WebAudioPeakMeter {
     return channelMask
   }
 
-  maskSize (floatVal) {
+  maskSize(floatVal) {
     if (floatVal === 0.0) {
       return this.meterHeight
     }
@@ -175,7 +175,7 @@ class WebAudioPeakMeter {
     }
   }
 
-  updateMeter (audioProcessingEvent) {
+  updateMeter(audioProcessingEvent) {
     var inputBuffer = audioProcessingEvent.inputBuffer
     var i
     var channelData = []

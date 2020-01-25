@@ -8,16 +8,21 @@
     "abuild": "python helper.py && tsc",
     "arun": "python helper.py && tsc && node ./built/server.js",
     "start": "node ./built/server.js",
-    "publish":"npm run abuild && git add -A && git commit -m 'save' && git push heroku master"
+    "publish": "npm run abuild && git add -A && git commit -m 'save' && git push heroku master"
   },
   "license": "ISC",
   "dependencies": {
+    "@types/cors": "^2.8.6",
+    "@types/express-session": "^1.15.16",
+    "@types/sequelize": "^4.28.8",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
-    "@types/cors": "^2.8.6",
     "dotenv": "^8.2.0",
     "express": "^4.17.0",
-    "recorder-js": "^1.0.7"
+    "express-session": "^1.17.0",
+    "mysql2": "^2.1.0",
+    "recorder-js": "^1.0.7",
+    "sequelize": "^5.21.3"
   },
   "devDependencies": {
     "cross-env": "^5.2.0",
