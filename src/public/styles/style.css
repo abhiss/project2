@@ -26,7 +26,8 @@ button {
     font-family: 'Roboto', sans-serif;
 
 }
-    
+
+
 #footer_container{
     position: absolute;
     z-index: 33;
@@ -50,6 +51,18 @@ button {
     text-align: center;
     margin: auto;
 }
+
+.form-container{
+    display: flex;
+    flex-direction: column;
+    font-family: museo, serif;
+font-weight: 300;
+font-style: normal;
+    color: #4C4D54;
+    text-align: center;
+
+}
+    
 
 .results_wrapper{
     height: 55vh;
@@ -120,7 +133,7 @@ button {
     display: flex; 
     align-items: center;
     justify-content:space-evenly;
-    /* margin-top: vmax; */
+    margin-top: 10vmax;
       
 }
 
