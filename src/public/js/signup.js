@@ -3,6 +3,7 @@ const signupFormHandler = async function (event) {
     event.preventDefault();
 
     const usernameEl = document.querySelector("#username-input-signup");
+    const emailEl = document.querySelector("")
     const passwordEl = document.querySelector("#password-input-signup");
     fetch("/user", {
         method: "post",
