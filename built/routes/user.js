@@ -1,6 +1,6 @@
 "use strict";
 exports.__esModule = true;
-var User = require("../models/User");
+var User_1 = require("../models/User");
 var bcrypt = require("bcryptjs");
 var secret = require("../config/keys").secret;
 function default_1(app) {
@@ -8,14 +8,14 @@ function default_1(app) {
         res.render("signup", {});
     });
     app.post("/user", function (req, res) {
-        User.findOne({ where: { username: req.body.username } }).then(function (user) {
+        User_1["default"].findOne({ where: { username: req.body.username } }).then(function (user) {
             console.log(user);
             if (user) {
                 var error = "Username exists in database.";
                 return res.status(400).json(error);
             }
             else {
-                var newUser_1 = new User({
+                var newUser_1 = new User_1["default"]({
                     username: req.body.username,
                     password: req.body.password
                 });
@@ -45,7 +45,7 @@ function default_1(app) {
     app.post("/login", function (req, res) {
         var username = req.body.username;
         var password = req.body.password;
-        User.findOne({ where: { username: username } }).then(function (user) {
+        User_1["default"].findOne({ where: { username: username } }).then(function (user) {
             if (!user) {
                 var errors = void 0;
                 errors.username = "No Account Found";
@@ -82,7 +82,7 @@ function default_1(app) {
         }
     });
     app["delete"]("/user/:id", function (req, res) {
-        User.destroy({
+        User_1["default"].destroy({
             where: {
                 id: req.params.id
             }
