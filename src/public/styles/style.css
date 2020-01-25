@@ -422,7 +422,10 @@ button {
     margin-top: 30px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-    font-family: 'Roboto', sans-serif;
+    font-family: termina, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    
     font-size: 1.2em;
     color: white;
     box-shadow: inset
