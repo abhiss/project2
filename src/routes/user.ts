@@ -1,11 +1,12 @@
 import * as express from 'express'
 import User from "../models/User";
 import * as bcrypt from 'bcryptjs'
+import * as path from 'path';
 const { secret } = require("../config/keys");
 
-export default function(app: express.Application) {
+export default function (app: express.Application) {
     app.get("/signup", (req, res) => {
-        res.render("signup", {});
+        res.sendFile(path.join(__dirname + "/public/signup.html"))
     });
     app.post("/user", (req, res) => {
         User.findOne({ where: { username: req.body.username } }).then(user => {
