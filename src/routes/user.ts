@@ -1,5 +1,5 @@
 import * as express from 'express'
-import User from "../models/User";
+import { User } from "../models";
 import * as bcrypt from 'bcryptjs'
 import * as path from 'path';
 const { secret } = require("../config/keys");

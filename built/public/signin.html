@@ -30,26 +30,24 @@
 
 <body>
     <div id="header_container" class="slide4">
-
         <div>
             <p class="title" id="home">Hey You</p>
-            <p class="sub_title">Create an Account</p>
+            <h2 class="sub_title">Welcome</h2>
         </div>
         <div id="login_container">
             <div id="signup" role="tabpanel">
                 <form id="signup-form">
                     <div class="form-container">
-                        <input type="text" id="username-input-signup" class="cat_box"
-                            placeholder="What should I call you?"
-                            style="color:#4c4d54; margin-top: 5vmin; background-color: white;">
-                        <hr width="200px">
-                        <a class="text">In order to authenticate you,<br> please provide the following</a>
-                        <input type="text" id="email-input-signup" class="cat_box" placeholder="enter your email"
-                            style="color:#4c4d54; margin-top: 5vmin; background-color: white;">
-                        <input type="text" id="password-input-signup" class="cat_box" placeholder="create a password"
-                            style="color:#4c4d54; margin-top: 5vmin; background-color: white;">
+                        <input type="text" id="username-input-signup" class="cat_box" placeholder="enter your email"
+                            style="color:#4C4D54; margin-top: 5vmin; background-color: white;">
+                        <input type="text" id="password-input-signup" class="cat_box" placeholder="password"
+                            style="color:#4C4D54; margin-top: 5vmin; background-color: white;">
                         <br>
-                        <button type="submit" id="signup-btn" class="btn btn-outline-light som_button_bar">SAVE</button>
+                        <button type="submit" id="signup-btn"
+                            class="btn btn-outline-light som_button_bar">sign-in</button>
+                        <br>
+                        <hr width="200px">
+                        <p id="newaccount" class="sub_title">create an account</p>
 
                     </div>
                     <div>
@@ -67,7 +65,18 @@
     </div>
 
 
-    <script src="/js/signup.js"></script>
+    <script type="text/javascript">
+
+
+        document.getElementById("newaccount").onclick = function () {
+            location.href = "signup.html";
+        };
+
+
+    </script>
+    <script src="/javascript/signup.js">
+
+    </script>
 
 
 </body>
