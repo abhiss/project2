@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://use.typekit.net/xjt5ste.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+
+
+    <script src="https://unpkg.com/swiper/js/swiper.js"></script>
+    <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/style.css">
+
+    <title>Hey You!</title>
+
+</head>
+
+<body>
+    <div id="header_container" class="slide4">
+        <nav class="nav_bar"></nav>
+        <p><img src="images/mail_icon.png" alt="mail" class="mail_icon"></p>
+        </nav>
+        <div>
+            <p class="title" id="home">Hey You</p>
+            <h2 class="sub_title">Weclome</h2>
+        </div>
+        <div id="login_container">
+            <div id="signup" role="tabpanel">
+                <form id="signup-form">
+                    <div class="form-container">
+                        <input type="text" id="username-input-signup" class="cat_box" placeholder="enter your email"
+                            style="color:#F7F9F3; margin-top: 5vmin; background-color: white;">
+                        <input type="text" id="password-input-signup" class="cat_box" placeholder="password"
+                            style="color:#F7F9F3; margin-top: 5vmin; background-color: white;">
+                        <br>
+                        <button type="submit" id="signup-btn"
+                            class="btn btn-outline-light som_button_bar">submit</button>
+                        <br>
+                        <hr width="200px">
+                        <p id="newaccount" class="sub_title">create an account</p>
+
+                    </div>
+                    <div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Swiper -->
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide slide4" data-hash="slide1">
+            </div>
+        </div>
+    </div>
+
+    <div id="footer_container">
+        <nav class="nav_bar">
+            <!-- the button used for test -->
+            <a onClick='openNav()'><img src="images/menu.svg" alt="mail" class="menu_icon"></a>
+            <div class="sidenav">
+                <p onClick='closeNav()'><img src="images/close_arrow.svg" alt="close" style="height: 10px; width: 40px"
+                        ;></p>
+
+                <p>PROFILE</p>
+                <hr style="width: 80vw;">
+                <p>SIGN OUT</p>
+            </div>
+        </nav>
+    </div>
+    <!-- Initialize Swiper -->
+    <script>
+
+        var swiper = new Swiper('.swiper-container', {
+
+
+            slideToClickedSlide: false,
+
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+            hashNavigation: {
+                replaceState: true,
+            },
+
+            effect: 'fade',
+            fadeEffect: {
+                crossFade: false
+            },
+
+
+
+        });
+
+        $(window).ready(function () {
+
+            var wHeight = $(window).height();
+
+            $('.slide')
+                .height(wHeight)
+
+        });
+
+
+
+
+    </script>
+
+    <script type="text/javascript">
+
+
+        document.getElementById("newaccount").onclick = function () {
+            location.href = "signup.html";
+        };
+
+        function openNav() {
+            document.querySelector(".sidenav").style.height = "175px";
+            document.querySelector(".sidenav").style.paddingTop = "10px";
+            document.querySelector(".footer_container").style.height = "0";
+        }
+        function closeNav() {
+            document.querySelector(".sidenav").style.height = "0";
+            document.querySelector(".sidenav").style.paddingTop = "0";
+        }
+
+    </script>
+    <script src="/javascript/signup.js"></script>
+
+
+</body>
+
+
+</html>
+
+
+
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script> -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>
