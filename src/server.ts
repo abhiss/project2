@@ -12,7 +12,7 @@ import * as path from 'path'
 
 let app = express();
 var sess = {
-  secret: "Super secret secret",
+  secret: process.env.APP_SECRET,
   cookie: {
     secure: false
   }
@@ -37,6 +37,7 @@ app.use(cors())
 //app.use(require('./routes'));
 htmlRoutes(app)
 userRoutes(app)
+
 
 app.listen(PORT, function () {
   console.log("Server listening on port: " + PORT);
