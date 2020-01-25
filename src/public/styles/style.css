@@ -412,6 +412,7 @@ button {
     width: 100%;
     position: fixed;
     z-index: 9999;
+    -webkit-z-
     bottom: 0;
     top:30;
     left: 0;
@@ -426,7 +427,6 @@ button {
     font-family: termina, sans-serif;
     font-weight: 400;
     font-style: normal;
-    
     font-size: 1.2em;
     color: white;
     /* box-shadow: inset

@@ -5,6 +5,7 @@ var session = require("express-session");
 var bodyParser = require("body-parser");
 var sequelize = require('./config/config');
 var htmlRoutes_1 = require("./routes/htmlRoutes");
+var user_1 = require("./routes/user");
 var cors = require("cors");
 var path = require("path");
 var app = express();
@@ -25,6 +26,7 @@ app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 app.use(express.static(path.join(__dirname + '/public')));
 app.use(cors());
 htmlRoutes_1["default"](app);
+user_1["default"](app);
 app.listen(PORT, function () {
     console.log("Server listening on port: " + PORT);
     sequelize.sync({ force: false });

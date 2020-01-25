@@ -47,36 +47,17 @@
     <div class="swiper-container">
         <div class="swiper-wrapper">
             <div class="swiper-slide slide1" data-hash="slide1">
-                <p class="icon_title" style="margin-top: 18vh">INSPIRED</p>
-                <ul class="list-inline list">
-                    <li class="list-inline-item"><a class="list" href="#">Recents</a>
-                    </li>
-
-                    <li class="list-inline-item list"><a class="list" href="#"><b>Favorites</b></a>
-                    </li>
-
-                    <li class="list-inline-item list"><a class="list" href="#">Recieved</a>
-                    </li>
-                </ul>
                 <div class="swiper-slide">
                     <div class="swiper-container swiper-container-v">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <p class="results_container">
-                                    <span class="results">Nothing is more important than Family</span>
-                                    <span class="date"> 1988.Oct.12 16:23</span>
-                                </p>
-                            </div>
-                            <div class="swiper-slide">
-                                <p class="results_container">
-                                    <span class="results">Get off your butt!</span>
-                                    <span class="date"> 1992.Oct.12 16:23</span>
-                                </p>
-                            </div>
+                            <div class="swiper-slide">Vertical Slide 1</div>
+                            <div class="swiper-slide">Vertical Slide 2</div>
                             <div class="swiper-slide">Vertical Slide 3</div>
                             <div class="swiper-slide">Vertical Slide 4</div>
                             <div class="swiper-slide">Vertical Slide 5</div>
                         </div>
+                        <div class="swiper-pagination swiper-pagination-v"></div>
+
                     </div>
                 </div>
             </div>
@@ -248,11 +229,6 @@
 
         var swiper = new Swiper('.swiper-container', {
 
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-
             hashNavigation: {
                 replaceState: true,
             },
@@ -262,10 +238,9 @@
                 crossFade: false
             },
 
-            loop: true
+            // loop: true
 
         });
-
 
         var swiperV = new Swiper('.swiper-container-v', {
             direction: 'vertical',
@@ -275,6 +250,7 @@
                 clickable: true,
             },
         });
+
 
         $(window).ready(function () {
 
