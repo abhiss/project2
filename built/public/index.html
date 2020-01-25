@@ -36,6 +36,10 @@
         <div>
             <p class="title" id="home">Hey You</p>
             <p class="sub_title">How are you feeling?</p>
+
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                Launch demo modal
+            </button>
         </div>
     </div>
     <!-- Swiper -->
@@ -96,19 +100,46 @@
             </div>
         </div>
     </div>
+
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        Launch demo modal
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sidenav">
+        <p onClick='closeNav()'><img src="images/close_arrow.svg" alt="close" style="height: 10px; width: 40px" ;></p>
+
+        <p>PROFILE</p>
+        <hr style="width: 80vw;">
+
+        <p>SIGN OUT</p>
+    </div>
     <div id="footer_container">
         <nav class="nav_bar">
             <!-- the button used for test -->
             <a onClick='openNav()'><img src="images/menu.svg" alt="mail" class="menu_icon"></a>
-            <div class="sidenav">
-                <p onClick='closeNav()'><img src="images/close_arrow.svg" alt="close" style="height: 10px; width: 40px"
-                        ;></p>
-
-                <p>Profile</p>
-                <hr style="width: 80vw;">
-
-                <p>Sign Out</p>
-            </div>
         </nav>
     </div>
     <!-- Initialize Swiper -->

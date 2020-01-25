@@ -42,9 +42,6 @@ function default_1(app) {
             }
         });
     });
-    app.get("/login", function (req, res) {
-        res.render("login", {});
-    });
     app.post("/login", function (req, res) {
         var username = req.body.username;
         var password = req.body.password;
