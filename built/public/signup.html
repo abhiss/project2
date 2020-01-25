@@ -29,57 +29,43 @@
 </head>
 
 <body>
-    <div id="header_container">
+    <div id="header_container" class="slide4">
         <nav class="nav_bar"></nav>
         <p><img src="images/mail_icon.png" alt="mail" class="mail_icon"></p>
         </nav>
         <div>
             <p class="title" id="home">Hey You</p>
-            <p class="sub_title">How are you feeling?</p>
+            <p class="sub_title">Create an Account</p>
+        </div>
+        <div id="login_container">
+            <div id="signup" role="tabpanel">
+                <form id="signup-form">
+                    <div class="form-container">
+                        <input type="text" id="username-input-signup" class="cat_box"
+                            placeholder="What should I call you?"
+                            style="color:#F7F9F3; margin-top: 5vmin; background-color: white;">
+                        <hr width="200px">
+                        <a class="text">In order to authenticate you,<br> please provide the following</a>
+                        <input type="text" id="email-input-signup" class="cat_box" placeholder="enter your email"
+                            style="color:#F7F9F3; margin-top: 5vmin; background-color: white;">
+                        <input type="text" id="password-input-signup" class="cat_box" placeholder="create a password"
+                            style="color:#F7F9F3; margin-top: 5vmin; background-color: white;">
+                        <br>
+                        <button type="submit" id="signup-btn" class="btn btn-outline-light som_button_bar">SAVE</button>
+
+                    </div>
+                    <div>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
     <!-- Swiper -->
     <div class="swiper-container">
         <div class="swiper-wrapper">
-            <div class="swiper-slide slide1" data-hash="slide1">
-                <p class="icon_title" style="margin-top: 180px;">INSPIRED</p>
-                <textarea placeholder="Post" class="text_box" rows="10" cols="20"></textarea>
-                <div>
-                    <button type="button" class="btn btn-outline-light ins_button_bar" id="ins_save">SAVE</button>
-                </div>
-
+            <div class="swiper-slide slide4" data-hash="slide1">
             </div>
-            <div class="swiper-slide slide2" data-hash="slide2">
-                <p class="icon_title" style="margin-top: 180px">MELANCHOLIC</p>
-                <textarea placeholder="Post" class="text_box" rows="10" cols="20" style="color:white"></textarea>
-                <div>
-                    <button type="button" class="btn btn-outline-light mel_button_bar" id="mel_save">SAVE</button>
-                </div>
-
-            </div>
-            <div class="swiper-slide slide3" data-hash="slide3">
-                <p class="icon_title" style="margin-top: 180px">JOY</p>
-                <textarea placeholder="Post" class="text_box" rows="10" cols="20"></textarea>
-                <div>
-                    <button type="button" class="btn btn-outline-light joy_button_bar" id="joy_save">SAVE</button>
-                </div>
-
-
-            </div>
-            <div class="swiper-slide slide4" data-hash="slide4">
-                <input type="text" class="cat_box" placeholder="Something Else"
-                    style="color:#F7F9F3; margin-top: 180px;" ;>
-                <textarea placeholder="Post" class="text_box" rows="10" cols="20" style="color:white"
-                    id="som_save"></textarea>
-                <div>
-                    <button type="button" class="btn btn-outline-light som_button_bar">SAVE</button>
-                </div>
-
-
-            </div>
-
         </div>
-
     </div>
 
     <div id="footer_container">
@@ -164,6 +150,7 @@
         }
 
     </script>
+    <script src="/javascript/signup.js"></script>
 
 
 </body>
