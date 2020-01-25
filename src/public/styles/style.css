@@ -1,3 +1,32 @@
+audio{
+    z-index: 9999;
+}
+
+
+html,body {
+    position: relative;
+    height: 90vh;
+    overflow: hidden;
+    background-color: black;
+}
+
+body {
+    font-size: 14px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+
+}
+
+button {
+    position:relative;
+    background-color: black;
+    border-width: 0px;
+    z-index:8888;
+    font-family: 'Roboto', sans-serif;
+
+}
+    
 #footer_container{
     position: absolute;
     z-index: 33;
@@ -14,51 +43,55 @@
 #recordings-cont {
     display: flex;
     flex-direction: column;
-    z-index: 99;
+    z-index: 999;
     text-align: center;
     margin: auto;
 }
 
-
-.btn-record {
-    display: flex;
-    justify-content:center;
-    align-items:center;
-    width: 15   0px ; 
-    height:150px;
-    margin: auto;
-    margin-top: 25vh;
+.results_wrapper{
+    height: 55vh;
+    overflow-y: auto;
 
 }
 
-html,body {
-    position: relative;
-    height: 90vh;
-    overflow: hidden;
-    background-color: black;
-    }
-    
-    body {
-    font-size: 14px;
-    color: #000;
-    margin: 0;
-    padding: 0;
-   
-    }
-    
-    .swiper-container {
+
+.swiper-container {
     display:flex;
     flex-direction: column;
     align-items: center;
     justify-content :center;
     width: 100%;
     height: 100%;
-   
-    }
+ 
+}
 
-    
-audio{
-    z-index: 11;
+
+.results_container{
+    display:flex;
+    margin: auto;
+    justify-content: center;
+    text-align: center;
+    width: 80vw;   
+    padding: 5px; 
+}
+
+.results{
+    background-color: white;
+    padding: 10px;
+    border-radius: 20px;
+    color: #4C4D54;
+    font-size: 12px;
+    font-family: museo, serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.date{
+    padding: 10px;
+    border-radius: 20px;
+    color: #4C4D54;
+    font-size: 11px;
+    font-family: 'Roboto', sans-serif;
 }
 
 .icon{
@@ -66,9 +99,18 @@ audio{
     justify-content:center;
     align-items:center;
     margin-top: 25vh;
-  
-    
      
+}
+
+.btn-record {
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    width: 150px ; 
+    height:150px;
+    margin: auto;
+    margin-top: 25vh;
+
 }
 
 .buttons_container{
@@ -207,7 +249,6 @@ audio{
     box-shadow: 
     8px 8px 16px rgb(138, 125, 102), 
     -8px -8px 16px    rgb(215, 194, 158);
-    
 }
 
 .title{
@@ -221,7 +262,6 @@ audio{
     text-align: center;
     margin-top:10vh;
    
-  
 }
 
 .sub_title{
@@ -268,6 +308,7 @@ audio{
     height:20px;
     float:right;
    margin:2vh;
+   
 }
 
 .menu_icon{
@@ -278,6 +319,15 @@ audio{
     align-self: center;
     margin-top: 3vh;
 }
+
+.list{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: #4C4D54;
+    font-family: 'Roboto', sans-serif;
+}
+
 
 .slide1 {
     background-color:#C7AFA4;
@@ -316,19 +366,19 @@ audio{
 }
 
 .search_box{
-    display:flex;
-    /* align-items: flex-start; */
+    position:absolute;
+    bottom: 20px;
+    justify-content: center;
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
     font-style: normal;
-    background-color: rgb(255, 255, 255);
+    background-color: #4C4D54;
     color: white;
     text-align: center;
     font-size: 15px;
     width: 250px;
     height: 40px;
     border-radius: 20px;
-    margin: auto;
     box-shadow: 
     8px 8px 16px rgba(79, 79, 79, 0.434), 
     -8px -8px 16px    rgba(255, 255, 255, 0.564);
@@ -354,6 +404,8 @@ audio{
   
 }
 
+
+
 .sidenav {
     height: 0;
     width: 100%;
@@ -378,7 +430,7 @@ audio{
 
     }
 
-    .close{
+    /* .close{
         width: 5px;
         height: 2px;
         border-radius: 100;
@@ -387,16 +439,11 @@ audio{
         8px 8px 16px rgb(53, 53, 58), 
         -8px -8px 16px    rgb(92, 93, 101);
         margin: auto;
-    }
+    } */
     
-    button {
-    position:relative;
-    background-color: black;
-    border-width: 0px;
-    z-index:8888;
-    font-family: 'Roboto', sans-serif;
 
-    }
+
+    
 
 
 /* Termina Thin
