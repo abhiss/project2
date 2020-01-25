@@ -4,7 +4,13 @@
         "noImplicitAny": false,
         "removeComments": true,
         "preserveConstEnums": true,
-        "outDir": "./built"
+        "outDir": "./built",
+        "lib": [
+            "es6"
+        ],
+        "types": [
+            "node"
+        ]
         //"allowSyntheticDefaultImports": true
         //"outFile": "./built/local/tsc.js"
         // "sourceMap": true
@@ -14,6 +20,6 @@
     ],
     "exclude": [
         "node_modules",
-        "**/*.spec.ts"
+        "**/*.spec.ts",
     ]
 }

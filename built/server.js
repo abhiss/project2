@@ -2,6 +2,7 @@
 exports.__esModule = true;
 var express = require("express");
 var bodyParser = require("body-parser");
+var sequelize = require("./config/config");
 var htmlRoutes_1 = require("./routes/htmlRoutes");
 var cors = require("cors");
 var path = require("path");
@@ -14,4 +15,5 @@ app.use(cors());
 htmlRoutes_1["default"](app);
 app.listen(PORT, function () {
     console.log("Server listening on port: " + PORT);
+    sequelize.sync({ force: false });
 });
