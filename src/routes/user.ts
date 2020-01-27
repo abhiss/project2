@@ -1,5 +1,5 @@
 import * as express from 'express'
-import { User } from "../models";
+const { User } = require("../models");
 import * as bcrypt from 'bcryptjs'
 import * as path from 'path';
 const { secret } = require("../config/keys");
@@ -8,6 +8,15 @@ export default function (app: express.Application) {
     app.get("/", (req, res) => {
         res.sendFile(path.join(__dirname + "/public/signup.html"))
     });
+
+    app.get("/home", (req, res) => {
+        res.sendFile(path.join(__dirname + "/public/home.html"))
+    });
+
+    app.get("usersignin", (req, res) => {
+        res.sendFile(path.join(__dirname + "/public/signin.html"))
+    });
+
     app.post("/user", (req, res) => {
         User.findOne({ where: { username: req.body.username } }).then(user => {
             console.log(user);
