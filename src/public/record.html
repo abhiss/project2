@@ -111,7 +111,8 @@
                 <p>PROFILE</p>
                 <hr style="width: 80vw;">
 
-                <p>SIGN OUT</p>
+                <p id="sign-out">SIGN OUT</p>
+
             </div>
         </nav>
     </div>
@@ -151,6 +152,10 @@
 
         document.getElementById("home").onclick = function () {
             location.href = "home.html";
+        };
+
+        document.getElementById("sign-out").onclick = function () {
+            location.href = "signin.html";
         };
 
         function openNav() {

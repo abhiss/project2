@@ -260,7 +260,7 @@
 
         <p>PROFILE</p>
         <hr style="width: 80vw;">
-        <p>SIGN OUT</p>
+        <p id="sign-out">SIGN OUT</p>
     </div>
     <div id="footer_container">
         <nav class="nav_bar">
@@ -314,6 +314,11 @@
         document.getElementById("home").onclick = function () {
             location.href = "home.html";
         };
+
+        document.getElementById("sign-out").onclick = function () {
+            location.href = "signin.html";
+        };
+
         function openNav() {
             document.querySelector(".sidenav").style.height = "175px";
             document.querySelector(".sidenav").style.paddingTop = "10px";
