@@ -1,29 +1,67 @@
 "use strict";
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 exports.__esModule = true;
-var User = require("../models").User;
+var _a = require("../models"), Memory = _a.Memory, User = _a.User;
 var bcrypt = require("bcryptjs");
 var path = require("path");
 var secret = require("../config/keys").secret;
+var withAuth = function (req, res, next) {
+    if (!req.session.userId) {
+        res.redirect("/");
+    }
+    else {
+        next();
+    }
+};
 function default_1(app) {
     app.get("/", function (req, res) {
-        res.sendFile(path.join(__dirname + "/public/signup.html"));
+        res.sendFile(path.join(__dirname + "/../public/signin.html"));
     });
-    app.get("/home", function (req, res) {
-        res.sendFile(path.join(__dirname + "/public/home.html"));
+    app.get("/home", withAuth, function (req, res) {
+        if (!req.session.userId) {
+            res.redirect("/");
+        }
+        else {
+            res.sendFile(path.join(__dirname + "/../public/home.html"));
+        }
     });
-    app.get("usersignin", function (req, res) {
-        res.sendFile(path.join(__dirname + "/public/signin.html"));
+    app.get("/text", function (req, res) {
+        res.sendFile(path.join(__dirname + "/../public/text.html"));
+    });
+    app.get("/createaccount", function (req, res) {
+        res.sendFile(path.join(__dirname + "/../public/signup.html"));
+    });
+    app.post("/post", function (req, res) {
+        var body = req.body;
+        console.log(req.session.userId);
+        Memory.create(__assign(__assign({}, body), { userId: req.session.userId }))
+            .then(function (newMemory) {
+            res.json(newMemory);
+        })["catch"](function (err) {
+            res.status(500).json(err);
+        });
     });
     app.post("/user", function (req, res) {
-        User.findOne({ where: { username: req.body.username } }).then(function (user) {
-            console.log(user);
-            if (user) {
-                var error = "Username exists in database.";
+        User.findOne({ where: { email: req.body.email } }).then(function (email) {
+            console.log(email);
+            if (email) {
+                var error = "Email exists in database.";
                 return res.status(400).json(error);
             }
             else {
                 var newUser_1 = new User({
                     username: req.body.username,
+                    email: req.body.email,
                     password: req.body.password
                 });
                 bcrypt.genSalt(10, function (err, salt) {
@@ -50,12 +88,12 @@ function default_1(app) {
         });
     });
     app.post("/signin", function (req, res) {
-        var username = req.body.username;
+        var email = req.body.email;
         var password = req.body.password;
-        User.findOne({ where: { username: username } }).then(function (user) {
+        User.findOne({ where: { email: email } }).then(function (user) {
             if (!user) {
                 var errors = void 0;
-                errors.username = "No Account Found";
+                errors.email = "No Account Found";
                 return res.status(404).json(errors);
             }
             bcrypt.compare(password, user.password).then(function (isMatch) {
@@ -82,10 +120,10 @@ function default_1(app) {
     app.post("/signout", function (req, res) {
         if (req.session) {
             req.session.destroy(function (i) { });
-            res.status(204).send("User has been logged out");
+            res.sendStatus(204).send("User has been logged out");
         }
         else {
-            res.status(404).send("User not signed in");
+            res.sendStatus(404).send("User not signed in");
         }
     });
     app["delete"]("/user/:id", function (req, res) {
