@@ -1,12 +1,22 @@
 import * as express from 'express'
-import User from "../models/User";
+const { User } = require("../models");
 import * as bcrypt from 'bcryptjs'
+import * as path from 'path';
 const { secret } = require("../config/keys");
 
-export default function(app: express.Application) {
-    app.get("/signup", (req, res) => {
-        res.render("signup", {});
+export default function (app: express.Application) {
+    app.get("/", (req, res) => {
+        res.sendFile(path.join(__dirname + "/public/signup.html"))
     });
+
+    app.get("/home", (req, res) => {
+        res.sendFile(path.join(__dirname + "/public/home.html"))
+    });
+
+    app.get("usersignin", (req, res) => {
+        res.sendFile(path.join(__dirname + "/public/signin.html"))
+    });
+
     app.post("/user", (req, res) => {
         User.findOne({ where: { username: req.body.username } }).then(user => {
             console.log(user);
@@ -45,7 +55,7 @@ export default function(app: express.Application) {
     //     res.render("login", {});
     // });
 
-    app.post("/login", (req, res) => {
+    app.post("/signin", (req, res) => {
         const username = req.body.username;
         const password = req.body.password;
         User.findOne({ where: { username } }).then(user => {
@@ -75,7 +85,7 @@ export default function(app: express.Application) {
         });
     });
 
-    app.post("/logout", (req, res) => {
+    app.post("/signout", (req, res) => {
         if (req.session) {
             req.session.destroy(i => { });
             res.status(204).send("User has been logged out");

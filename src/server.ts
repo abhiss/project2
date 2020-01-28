@@ -6,6 +6,7 @@ const sequelize = require('./config/config');
 
 import htmlRoutes from './routes/htmlRoutes';
 import userRoutes from './routes/user';
+const auth = require('./routes/auth');
 import * as cors from 'cors'
 //var db = require("./models");
 import * as path from 'path'
@@ -35,8 +36,8 @@ app.use(express.static(path.join(__dirname + '/public')));
 app.use(cors())
 //put requests in there :)
 //app.use(require('./routes'));
-htmlRoutes(app)
-userRoutes(app)
+htmlRoutes(app);
+userRoutes(app);
 
 
 app.listen(PORT, function () {

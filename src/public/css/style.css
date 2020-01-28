@@ -426,12 +426,12 @@ font-style: normal;
     height: 0;
     width: 100%;
     position: fixed;
-    z-index: 9999;
+    z-index: 9999999;
     bottom: 0;
     top:30;
     left: 0;
     background-color: #4C4D54;
-    overflow-x: hidden;
+    overflow-x: visible;
     transition:height 0.5s;
     padding-top:0;
     text-align:center;
@@ -465,85 +465,57 @@ font-style: normal;
 
 
 /* Termina Thin
-
 font-family: termina, sans-serif;
 font-weight: 100;
 font-style: normal;
-
 Termina Extra Light
-
 font-family: termina, sans-serif;
 font-weight: 200;
 font-style: normal;
-
 Termina Light
-
 font-family: termina, sans-serif;
 font-weight: 300;
 font-style: normal;
-
 Termina Regular
-
 font-family: termina, sans-serif;
 font-weight: 400;
 font-style: normal;
-
  
  
-
 Marcia Italic
-
 font-family: marcia, serif;
 font-weight: 400;
 font-style: italic;
-
 Marcia Regular
-
 font-family: marcia, serif;
 font-weight: 400;
 font-style: normal;
-
 Marcia Bold
-
 font-family: marcia, serif;
 font-weight: 700;
 font-style: normal;
-
 Marcia Bold Italic
-
 font-family: marcia, serif;
 font-weight: 700;
 font-style: italic; 
-
 -----------------------------
 Museo 300
-
 font-family: museo, serif;
 font-weight: 300;
 font-style: normal;
-
 Museo 700
-
 font-family: museo, serif;
 font-weight: 700;
 font-style: normal;
-
 Museo 300 Italic
-
 font-family: museo, serif;
 font-weight: 300;
 font-style: italic;
-
 Museo 700 Italic
-
 font-family: museo, serif;
 font-weight: 700;
 font-style: italic;
-
 _______________________________
  
 font-family: 'Roboto', sans-serif;
-
-
-
 */
