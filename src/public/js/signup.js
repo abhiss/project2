@@ -7,8 +7,10 @@ const signupFormHandler = async function (event) {
     const passwordEl = document.querySelector("#password-input-signup");
 
     if (emailEl.value.length < 3) {
+        alert('email is too short')
         return;
     } else if (passwordEl.value.length < 3) {
+        alert('password is too short')
         return;
     }
     fetch("/user", {

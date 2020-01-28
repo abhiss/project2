@@ -7,8 +7,10 @@ const signupFormHandler = async function (event) {
     const passwordEl = document.querySelector("#password-input-signup");
 
     if (emailEl.value.length < 3) {
+        alert('email is too short')
         return;
     } else if (passwordEl.value.length < 3) {
+        alert('password is too short')
         return;
     }
     fetch("/user", {
@@ -21,20 +23,13 @@ const signupFormHandler = async function (event) {
         headers: { "Content-Type": "application/json" }
     })
         .then(function (value) {
-<<<<<<< HEAD
-            if (value.status = 200) {
-                document.location.replace("/");
-            }
-
-=======
             if (value.status == 200) {
                 console.log('account succesfully created');
                 document.location.replace("/");
             }
-            else{
+            else {
                 alert('this email is already taken')
             }
->>>>>>> a80cd9ae5c417b06022d88f3893b6e97c15b672b
         })
         .catch(err => console.log(err));
 };
