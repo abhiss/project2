@@ -8,7 +8,7 @@
     "abuild": "python helper.py && tsc",
     "arun": "python helper.py && tsc && node ./built/server.js",
     "start": "node ./built/server.js",
-    "publish": "npm run abuild && git add -A && git commit -m 'save' && git push heroku master"
+    "publish": "npm i && npm run abuild && git add -A && git commit -m 'save' && git push heroku master"
   },
   "license": "ISC",
   "dependencies": {
@@ -18,6 +18,7 @@
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
     "express": "^4.17.0",
     "express-session": "^1.17.0",
     "mysql2": "^2.1.0",
