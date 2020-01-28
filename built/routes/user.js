@@ -1,6 +1,17 @@
 "use strict";
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 exports.__esModule = true;
-var User = require("../models").User;
+var _a = require("../models"), Memory = _a.Memory, User = _a.User;
 var bcrypt = require("bcryptjs");
 var path = require("path");
 var secret = require("../config/keys").secret;
@@ -15,6 +26,32 @@ var withAuth = function (req, res, next) {
 function default_1(app) {
     app.get("/", function (req, res) {
         res.sendFile(path.join(__dirname + "/../public/signin.html"));
+<<<<<<< HEAD
+    });
+    app.get("/home", withAuth, function (req, res) {
+        if (!req.session.userId) {
+            res.redirect("/");
+        }
+        else {
+            res.sendFile(path.join(__dirname + "/../public/home.html"));
+        }
+    });
+    app.get("/text", function (req, res) {
+        res.sendFile(path.join(__dirname + "/../public/text.html"));
+    });
+    app.get("/createaccount", function (req, res) {
+        res.sendFile(path.join(__dirname + "/../public/signup.html"));
+    });
+    app.post("/post", function (req, res) {
+        var body = req.body;
+        console.log(req.session.userId);
+        Memory.create(__assign(__assign({}, body), { userId: req.session.userId }))
+            .then(function (newMemory) {
+            res.json(newMemory);
+        })["catch"](function (err) {
+            res.status(500).json(err);
+        });
+=======
     });
     app.get("/home", withAuth, function (req, res) {
         if (!req.session.userId) {
@@ -26,6 +63,7 @@ function default_1(app) {
     });
     app.get("/createaccount", function (req, res) {
         res.sendFile(path.join(__dirname + "/../public/signup.html"));
+>>>>>>> a80cd9ae5c417b06022d88f3893b6e97c15b672b
     });
     app.post("/user", function (req, res) {
         User.findOne({ where: { email: req.body.email } }).then(function (email) {
@@ -96,10 +134,10 @@ function default_1(app) {
     app.post("/signout", function (req, res) {
         if (req.session) {
             req.session.destroy(function (i) { });
-            res.status(204).send("User has been logged out");
+            res.sendStatus(204).send("User has been logged out");
         }
         else {
-            res.status(404).send("User not signed in");
+            res.sendStatus(404).send("User not signed in");
         }
     });
     app["delete"]("/user/:id", function (req, res) {

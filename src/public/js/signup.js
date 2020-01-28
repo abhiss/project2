@@ -25,7 +25,7 @@ const signupFormHandler = async function (event) {
                 console.log('account succesfully created');
                 document.location.replace("/");
             }
-            else{
+            else {
                 alert('this email is already taken')
             }
         })
