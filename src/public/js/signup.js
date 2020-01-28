@@ -20,8 +20,14 @@ const signupFormHandler = async function (event) {
         }),
         headers: { "Content-Type": "application/json" }
     })
-        .then(function () {
-            document.location.replace("/");
+        .then(function (value) {
+            if (value.status == 200) {
+                console.log('account succesfully created');
+                document.location.replace("/");
+            }
+            else{
+                alert('this email is already taken')
+            }
         })
         .catch(err => console.log(err));
 };
