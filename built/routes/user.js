@@ -4,26 +4,40 @@ var User = require("../models").User;
 var bcrypt = require("bcryptjs");
 var path = require("path");
 var secret = require("../config/keys").secret;
+var withAuth = function (req, res, next) {
+    if (!req.session.userId) {
+        res.redirect("/");
+    }
+    else {
+        next();
+    }
+};
 function default_1(app) {
     app.get("/", function (req, res) {
-        res.sendFile(path.join(__dirname + "/public/signup.html"));
+        res.sendFile(path.join(__dirname + "/../public/signin.html"));
     });
-    app.get("/home", function (req, res) {
-        res.sendFile(path.join(__dirname + "/public/home.html"));
+    app.get("/home", withAuth, function (req, res) {
+        if (!req.session.userId) {
+            res.redirect("/");
+        }
+        else {
+            res.sendFile(path.join(__dirname + "/../public/home.html"));
+        }
     });
-    app.get("usersignin", function (req, res) {
-        res.sendFile(path.join(__dirname + "/public/signin.html"));
+    app.get("/createaccount", function (req, res) {
+        res.sendFile(path.join(__dirname + "/../public/signup.html"));
     });
     app.post("/user", function (req, res) {
-        User.findOne({ where: { username: req.body.username } }).then(function (user) {
-            console.log(user);
-            if (user) {
-                var error = "Username exists in database.";
+        User.findOne({ where: { email: req.body.email } }).then(function (email) {
+            console.log(email);
+            if (email) {
+                var error = "Email exists in database.";
                 return res.status(400).json(error);
             }
             else {
                 var newUser_1 = new User({
                     username: req.body.username,
+                    email: req.body.email,
                     password: req.body.password
                 });
                 bcrypt.genSalt(10, function (err, salt) {
@@ -50,12 +64,12 @@ function default_1(app) {
         });
     });
     app.post("/signin", function (req, res) {
-        var username = req.body.username;
+        var email = req.body.email;
         var password = req.body.password;
-        User.findOne({ where: { username: username } }).then(function (user) {
+        User.findOne({ where: { email: email } }).then(function (user) {
             if (!user) {
                 var errors = void 0;
-                errors.username = "No Account Found";
+                errors.email = "No Account Found";
                 return res.status(404).json(errors);
             }
             bcrypt.compare(password, user.password).then(function (isMatch) {
