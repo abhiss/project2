@@ -5,7 +5,14 @@ class Memory extends Model { }
 
 Memory.init(
     {
-        body: DataTypes.STRING
+        body: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        isAudio: {
+            type: DataTypes.BOOLEAN
+        },
+        mood: DataTypes.STRING
     },
     {
         sequelize

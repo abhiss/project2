@@ -1,5 +1,5 @@
 import * as express from 'express'
-const { User } = require("../models");
+const { Memory, User } = require("../models");
 import * as bcrypt from 'bcryptjs'
 import * as path from 'path';
 const { secret } = require("../config/keys");
@@ -26,8 +26,24 @@ export default function (app: express.Application) {
         }
     });
 
+    app.get("/text", (req, res) => {
+        res.sendFile(path.join(__dirname + "/../public/text.html"))
+    });
+
     app.get("/createaccount", (req, res) => {
         res.sendFile(path.join(__dirname + "/../public/signup.html"))
+    });
+
+    app.post("/post", (req, res) => {
+        const body = req.body;
+        console.log(req.session.userId);
+        Memory.create({ ...body, userId: req.session.userId })
+            .then(newMemory => {
+                res.json(newMemory);
+            })
+            .catch(err => {
+                res.status(500).json(err);
+            });
     });
 
     app.post("/user", (req, res) => {
@@ -102,9 +118,10 @@ export default function (app: express.Application) {
     app.post("/signout", (req, res) => {
         if (req.session) {
             req.session.destroy(i => { });
-            res.status(204).send("User has been logged out");
+            res.sendStatus(204).send("User has been logged out");
+            // req.session.cookie.expires = new Date().getTime();
         } else {
-            res.status(404).send("User not signed in");
+            res.sendStatus(404).send("User not signed in");
         }
     });
 
