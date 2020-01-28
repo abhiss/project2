@@ -2,7 +2,7 @@ export { }
 
 const withAuth = (req, res, next) => {
     if (!req.session.userId) {
-        res.redirect("/login");
+        res.redirect("/signin");
     } else {
         next();
     }

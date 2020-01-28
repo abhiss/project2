@@ -3,29 +3,43 @@ const { User } = require("../models");
 import * as bcrypt from 'bcryptjs'
 import * as path from 'path';
 const { secret } = require("../config/keys");
+// const withAuth = require("../routes/auth");
+
+const withAuth = (req, res, next) => {
+    if (!req.session.userId) {
+        res.redirect("/");
+    } else {
+        next();
+    }
+};
 
 export default function (app: express.Application) {
     app.get("/", (req, res) => {
-        res.sendFile(path.join(__dirname + "/public/signup.html"))
+        res.sendFile(path.join(__dirname + "/../public/signin.html"))
     });
 
-    app.get("/home", (req, res) => {
-        res.sendFile(path.join(__dirname + "/public/home.html"))
+    app.get("/home", withAuth, (req, res) => {
+        if (!req.session.userId) {
+            res.redirect("/");
+        } else {
+            res.sendFile(path.join(__dirname + "/../public/home.html"))
+        }
     });
 
-    app.get("usersignin", (req, res) => {
-        res.sendFile(path.join(__dirname + "/public/signin.html"))
+    app.get("/createaccount", (req, res) => {
+        res.sendFile(path.join(__dirname + "/../public/signup.html"))
     });
 
     app.post("/user", (req, res) => {
-        User.findOne({ where: { username: req.body.username } }).then(user => {
-            console.log(user);
-            if (user) {
-                let error = "Username exists in database.";
+        User.findOne({ where: { email: req.body.email } }).then(email => {
+            console.log(email);
+            if (email) {
+                let error = "Email exists in database.";
                 return res.status(400).json(error);
             } else {
                 const newUser = new User({
                     username: req.body.username,
+                    email: req.body.email,
                     password: req.body.password
                 });
                 bcrypt.genSalt(10, (err, salt) => {
@@ -56,12 +70,12 @@ export default function (app: express.Application) {
     // });
 
     app.post("/signin", (req, res) => {
-        const username = req.body.username;
+        const email = req.body.email;
         const password = req.body.password;
-        User.findOne({ where: { username } }).then(user => {
+        User.findOne({ where: { email } }).then(user => {
             if (!user) {
-                let errors: { username: string; };
-                errors.username = "No Account Found";
+                let errors: { email: string; };
+                errors.email = "No Account Found";
                 return res.status(404).json(errors);
             }
             bcrypt.compare(password, user.password).then(isMatch => {

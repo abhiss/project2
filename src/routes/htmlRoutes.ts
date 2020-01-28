@@ -4,7 +4,7 @@ import * as path from 'path';
 
 export default function (app: express.Application) {
     app.get('/', function (req, res) {
-        res.sendFile(path.join(__dirname + "/../public/signup.html"))
+        res.sendFile(path.join(__dirname + "/../public/signin.html"))
     });
     console.log('this ran');
     app.post('/test', function (req, res) {
