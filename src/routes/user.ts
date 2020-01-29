@@ -35,7 +35,14 @@ export default function (app: express.Application) {
     });
 
     app.get("/play", (req, res) => {
-        res.sendFile(path.join(__dirname + "/../public/play.html"))
+        Memory.findAll({
+            where: {
+                userId: req.session.userId
+            }
+        }).then(memories => {
+            res.json(memories);
+            console.log(memories);
+        });
     });
 
     app.post("/post", (req, res) => {
