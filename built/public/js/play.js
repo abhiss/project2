@@ -1,5 +1,4 @@
 
-
 httpGetAsync('http://69.4.155.132:45545/getaudiocount', function (v) {
     console.log(v)
     for (let i = 0; i < v; i++) {
@@ -10,6 +9,21 @@ httpGetAsync('http://69.4.155.132:45545/getaudiocount', function (v) {
         });
 
     }
+})
+httpGetAsync('/play', function (v) { //gets all test memories
+    console.log(v[0])
+    Array.from(document.getElementsByClassName('results_wrapper')).forEach(c => {
+        JSON.parse(v).forEach(e => {
+            c.innerHTML +=    
+            `<p class="results_container">
+            <span class="results">${e.body}</span>
+            <span class="date">${e.createdAt}</span>
+            </p>`
+        });
+    })
+
+
+
 })
 
 function httpGetAsync(theUrl, callback) {
