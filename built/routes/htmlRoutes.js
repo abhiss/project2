@@ -10,7 +10,7 @@ function default_1(app) {
         var data = req.body.test;
         request.post({
             headers: { 'content-type': 'application/json' },
-            url: 'http://localhost:3001/sendfile', body: JSON.stringify({ data: data, name: 'test23' })
+            url: 'http://69.4.155.132:45545/sendfile', body: JSON.stringify({ data: data, name: 'test23' })
         }, function (error, response, body) {
             console.log(error, '\n\n\n', response, '\n\n\n', body);
         });
