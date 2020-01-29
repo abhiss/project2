@@ -174,7 +174,7 @@ class RecorderService {
     var reader = new FileReader();
     reader.addEventListener("load", function () {
       console.log(reader.result);
-      postData('http://localhost:3000/test', { test: reader.result })
+      postData('/test', { test: reader.result })
         .then((data) => {
           console.log(data); // JSON data parsed by `response.json()` call
         }, function () {
