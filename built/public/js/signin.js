@@ -18,7 +18,7 @@ const loginFormHandler = async function (event) {
             else if (res.status == 200) { // everything ok
                 document.location.replace("/home");
             }
-            else if (res.status == 500){
+            else if (res.status == 500) {
                 alert('Password is incorrect')
             }
             else {
