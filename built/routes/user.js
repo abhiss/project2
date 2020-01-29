@@ -26,7 +26,6 @@ var withAuth = function (req, res, next) {
 function default_1(app) {
     app.get("/", function (req, res) {
         res.sendFile(path.join(__dirname + "/../public/signin.html"));
-<<<<<<< HEAD
     });
     app.get("/home", withAuth, function (req, res) {
         if (!req.session.userId) {
@@ -51,19 +50,6 @@ function default_1(app) {
         })["catch"](function (err) {
             res.status(500).json(err);
         });
-=======
-    });
-    app.get("/home", withAuth, function (req, res) {
-        if (!req.session.userId) {
-            res.redirect("/");
-        }
-        else {
-            res.sendFile(path.join(__dirname + "/../public/home.html"));
-        }
-    });
-    app.get("/createaccount", function (req, res) {
-        res.sendFile(path.join(__dirname + "/../public/signup.html"));
->>>>>>> a80cd9ae5c417b06022d88f3893b6e97c15b672b
     });
     app.post("/user", function (req, res) {
         User.findOne({ where: { email: req.body.email } }).then(function (email) {

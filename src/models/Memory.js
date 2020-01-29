@@ -10,7 +10,8 @@ Memory.init(
             allowNull: false
         },
         isAudio: {
-            type: DataTypes.BOOLEAN
+            type: DataTypes.BOOLEAN,
+            defaultValue: false
         },
         mood: DataTypes.STRING
     },

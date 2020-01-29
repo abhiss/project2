@@ -34,6 +34,10 @@ export default function (app: express.Application) {
         res.sendFile(path.join(__dirname + "/../public/signup.html"))
     });
 
+    app.get("/play", (req, res) => {
+        res.sendFile(path.join(__dirname + "/../public/play.html"))
+    });
+
     app.post("/post", (req, res) => {
         const body = req.body;
         console.log(req.session.userId);

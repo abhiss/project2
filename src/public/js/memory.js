@@ -2,7 +2,7 @@ const newMemory = async function (event) {
     event.preventDefault();
     console.log('test')
 
-    const textMemory = document.querySelector('#memory-input');
+    const textMemory = document.getElementById('#memory-input');
 
     const token = localStorage.getItem("token");
     await fetch(`/post`, {
@@ -14,11 +14,11 @@ const newMemory = async function (event) {
             "Content-Type": "application/json",
             authorization: `Bearer ${token}`
         }
-    }).then(function () {
-        document.location.replace("/home")
-    });
+    })
+    document.location.replace("/home")
+
 };
 
 document
-    .querySelector("#ins-save")
-    .addEventListener("submit", newMemory);
+    .getElementById("#ins_save")
+    .addEventListener("click", newMemory);
