@@ -41,6 +41,16 @@ function default_1(app) {
     app.get("/createaccount", function (req, res) {
         res.sendFile(path.join(__dirname + "/../public/signup.html"));
     });
+    app.get("/play", function (req, res) {
+        Memory.findAll({
+            where: {
+                userId: req.session.userId
+            }
+        }).then(function (memories) {
+            res.json(memories);
+            console.log(memories);
+        });
+    });
     app.post("/post", function (req, res) {
         var body = req.body;
         console.log(req.session.userId);
