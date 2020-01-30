@@ -490,7 +490,7 @@ font-style: normal;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #4C4D54;
+    background-color: rgba(76, 77, 84, 0);
     -webkit-transition: .4s;
     transition: .4s;
     box-shadow: 
@@ -505,16 +505,19 @@ font-style: normal;
     width: 120px;
     left: 12px;
     bottom: 12px;
-    background-color: #ffffff70;
+    background-color: #ffffffb2;
     box-shadow: 
     5px 5px 10px rgba(37, 37, 37, 0.582);
     -webkit-transition: .4s;
     transition: .4s;
-
   }
   
   input:checked + .slider::before {
     background-color: #CB5A5C;
+  }
+
+  input:checked + .slider {
+    background-color: rgb(128, 51, 52);;
   }
   
   input:focus + .slider {
