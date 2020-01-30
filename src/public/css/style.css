@@ -475,6 +475,7 @@ font-style: normal;
   .switch input {
     opacity:0;
     content: "rec";
+    
     width: 0;
     height: 0;
   }
@@ -501,7 +502,7 @@ font-style: normal;
     position: absolute;
     content: "";
     height: 178px;
-    width: 178px;
+    width: 120px;
     left: 12px;
     bottom: 12px;
     background-color: #ffffff70;
@@ -517,15 +518,17 @@ font-style: normal;
   }
   
   input:focus + .slider {
+      
     box-shadow: 
     inset 5px 5px 10px rgba(37, 37, 37, 0.582),
     inset -5px -5px 10px rgba(247, 245, 245, 0.589);
   }
   
   input:checked + .slider:before {
+      
     -webkit-transform: translateX(27%);
     -ms-transform: translateX(27%);
-    transform: translateX(27%);
+    transform: translateX(84%);
   }
   
   /* Rounded sliders */
@@ -534,7 +537,7 @@ font-style: normal;
   }
   
   .slider.round:before {
-    border-radius: 9%;
+    border-radius: 15px;
   }
     
 
