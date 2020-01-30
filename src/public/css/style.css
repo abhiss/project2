@@ -118,22 +118,11 @@ font-style: normal;
      
 }
 
-.btn-record {
-    display: flex;
-    justify-content:center;
-    align-items:center;
-    width: 150px ; 
-    height:150px;
-    margin: auto;
-    margin-top: 25vh;
-
-}
-
 .buttons_container{
     display: flex; 
     align-items: center;
     justify-content:space-evenly;
-    margin-top: 10vmax;
+    /* margin-top: 5vmax; */
       
 }
 
@@ -143,10 +132,11 @@ font-style: normal;
     align-items: center;
     float: left;
     width: 70px; 
-    height: 70px;
-    border-radius: 100%;
+    height: 100px;
+    border-radius: 25px;
     border-width: 0px;
     background-color: #C7AFA4;
+    margin-top: 5vmin;
     box-shadow: 
     8px 8px 16px rgb(169, 149, 139), 
     -8px -8px 16px   rgb(225, 198, 185);
@@ -158,10 +148,11 @@ font-style: normal;
     align-items: center;
     float: left;
     width: 70px; 
-    height: 70px;
-    border-radius: 100%;
+    height: 100px;
+    border-radius: 25px;
     border-width: 0px;
-    background-color: #777D88;
+    background-color: #777D88;  
+    margin-top: 5vmin;  
     box-shadow: 
     8px 8px 16px rgb(96, 101, 109), 
     -8px -8px 16px    rgb(150, 158, 172);
@@ -174,11 +165,14 @@ font-style: normal;
     align-items: center;
     float: left;
     width: 70px; 
-    height: 70px;
-    border-radius: 100%;
+    height: 100px;
+    border-radius: 25px;
+    border-width: 0px;
     background-color: #C3A2A5;
     border-width: 0px;
-    box-shadow: 
+    margin-top: 5vmin;
+
+    box-shadow:
     8px 8px 16px rgb(152, 127, 129), 
     -8px -8px 16px    rgb(232, 199, 201);
 }
@@ -189,11 +183,11 @@ font-style: normal;
     align-items: center;
     float: left;
     width: 70px; 
-    height: 70px;
-    border-radius: 100%;
+    height: 100px;
+    border-radius: 25px;
     border-width: 0px;
     background-color: #A6967B;
-    margin-top: 5vmin;
+    margin-top: 10vmin;
     box-shadow: 
     8px 8px 16px rgb(138, 125, 102), 
     -8px -8px 16px    rgb(215, 194, 158);
@@ -459,8 +453,89 @@ font-style: normal;
         margin: auto;
     } */
     
+.btn-record {
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    width: 250px ; 
+    height:150px;
+    margin: auto;
+    margin-top: 10vh;
+
+}
+
+/* The switch - the box around the slider */
 
 
+.switch {
+    margin-bottom: 10vh;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity:0;
+    content: "rec";
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: relative;
+    cursor: pointer;
+    width: 350px ; 
+    height:200px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #4C4D54;
+    -webkit-transition: .4s;
+    transition: .4s;
+    box-shadow: 
+    inset 5px 5px 10px rgba(37, 37, 37, 0.582),
+    inset -5px -5px 10px rgba(247, 245, 245, 0.589);
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 178px;
+    width: 178px;
+    left: 12px;
+    bottom: 12px;
+    background-color: #ffffff70;
+    box-shadow: 
+    5px 5px 10px rgba(37, 37, 37, 0.582);
+    -webkit-transition: .4s;
+    transition: .4s;
+
+  }
+  
+  input:checked + .slider::before {
+    background-color: #CB5A5C;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 
+    inset 5px 5px 10px rgba(37, 37, 37, 0.582),
+    inset -5px -5px 10px rgba(247, 245, 245, 0.589);
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(27%);
+    -ms-transform: translateX(27%);
+    transform: translateX(27%);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 23px;
+  }
+  
+  .slider.round:before {
+    border-radius: 9%;
+  }
     
 
 
