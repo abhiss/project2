@@ -56,8 +56,8 @@ button {
     display: flex;
     flex-direction: column;
     font-family: museo, serif;
-font-weight: 300;
-font-style: normal;
+    font-weight: 300;
+    font-style: normal;
     color: #4C4D54;
     text-align: center;
 
@@ -128,8 +128,8 @@ font-style: normal;
 
 .btn_shadow{
     box-shadow: 
-    -5px -5px 12px rgba(247, 247, 247, 0.336), 
-    5px 5px 12px   rgba(0, 0, 0, 0.26);
+    -8px -8px 12px rgba(247, 247, 247, 0.336), 
+    8px 8px 12px   rgba(0, 0, 0, 0.26);
 }
 
 
@@ -462,7 +462,7 @@ font-style: normal;
     font-family: 'Roboto', sans-serif;
     font-size: 24px;
     z-index: -1;
-    color: white;
+    color: rgba(255, 255, 255, 0.658);
     float: right;
 }
 
@@ -473,7 +473,7 @@ font-style: normal;
     font-family: 'Roboto', sans-serif;
     font-size: 24px;
     z-index: -1;
-    color: white;
+    color: rgba(255, 255, 255, 0.658);
     float: left;
 }
 
@@ -528,15 +528,14 @@ font-style: normal;
     background-color: rgb(128, 51, 52);;
   }
   
-  input:focus + .slider {
-      
+  /* input:focus + .slider {
     box-shadow: 
-    inset 5px 5px 10px rgba(37, 37, 37, 0.582),
-    inset -5px -5px 10px rgba(247, 245, 245, 0.589);
+    inset -5px -5px 10px rgba(247, 245, 245, 0.589),
+    inset 5px 5px 10px rgba(37, 37, 37, 0.582);
+    
   }
-  
+   */
   input:checked + .slider:before {
-      
     -webkit-transform: translateX(27%);
     -ms-transform: translateX(27%);
     transform: translateX(84%);
