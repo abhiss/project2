@@ -56,8 +56,8 @@ button {
     display: flex;
     flex-direction: column;
     font-family: museo, serif;
-font-weight: 300;
-font-style: normal;
+    font-weight: 300;
+    font-style: normal;
     color: #4C4D54;
     text-align: center;
 
@@ -118,24 +118,20 @@ font-style: normal;
      
 }
 
-.btn-record {
-    display: flex;
-    justify-content:center;
-    align-items:center;
-    width: 150px ; 
-    height:150px;
-    margin: auto;
-    margin-top: 25vh;
-
-}
-
 .buttons_container{
     display: flex; 
     align-items: center;
     justify-content:space-evenly;
-    margin-top: 10vmax;
+    /* margin-top: 5vmax; */
       
 }
+
+.btn_shadow{
+    box-shadow: 
+    -8px -8px 12px rgba(247, 247, 247, 0.336), 
+    8px 8px 12px   rgba(0, 0, 0, 0.26);
+}
+
 
 .ins_buttons{ 
     display: flex;
@@ -143,14 +139,13 @@ font-style: normal;
     align-items: center;
     float: left;
     width: 70px; 
-    height: 70px;
-    border-radius: 100%;
+    height: 100px;
+    border-radius: 25px;
     border-width: 0px;
     background-color: #C7AFA4;
-    box-shadow: 
-    8px 8px 16px rgb(169, 149, 139), 
-    -8px -8px 16px   rgb(225, 198, 185);
+    margin-top: 5vmin;
 }
+   
 
 .mel_buttons{ 
     display: flex;
@@ -158,14 +153,12 @@ font-style: normal;
     align-items: center;
     float: left;
     width: 70px; 
-    height: 70px;
-    border-radius: 100%;
+    height: 100px;
+    border-radius: 25px;
     border-width: 0px;
-    background-color: #777D88;
-    box-shadow: 
-    8px 8px 16px rgb(96, 101, 109), 
-    -8px -8px 16px    rgb(150, 158, 172);
-    
+    background-color: #777D88;  
+    margin-top: 5vmin;  
+   
 }
 
 .joy_buttons{ 
@@ -174,13 +167,13 @@ font-style: normal;
     align-items: center;
     float: left;
     width: 70px; 
-    height: 70px;
-    border-radius: 100%;
+    height: 100px;
+    border-radius: 25px;
+    border-width: 0px;
     background-color: #C3A2A5;
     border-width: 0px;
-    box-shadow: 
-    8px 8px 16px rgb(152, 127, 129), 
-    -8px -8px 16px    rgb(232, 199, 201);
+    margin-top: 5vmin;
+
 }
 
 .som_buttons{ 
@@ -189,14 +182,12 @@ font-style: normal;
     align-items: center;
     float: left;
     width: 70px; 
-    height: 70px;
-    border-radius: 100%;
+    height: 100px;
+    border-radius: 25px;
     border-width: 0px;
     background-color: #A6967B;
-    margin-top: 5vmin;
-    box-shadow: 
-    8px 8px 16px rgb(138, 125, 102), 
-    -8px -8px 16px    rgb(215, 194, 158);
+    margin-top: 10vmin;
+  
 }
 
 
@@ -211,9 +202,7 @@ font-style: normal;
     border-radius: 30px;
     margin-top: 20px;
     border-width: 0px;
-    box-shadow: 
-    8px 8px 16px rgb(169, 149, 139), 
-    -8px -8px 16px   rgb(225, 198, 185);
+   
    
 }
 
@@ -228,9 +217,7 @@ font-style: normal;
     border-radius: 30px;
     margin-top: 20px;
     border-width: 0px;
-    box-shadow: 
-    8px 8px 16px rgb(96, 101, 109), 
-    -8px -8px 16px    rgb(150, 158, 172);
+    
     
 }
 
@@ -245,9 +232,7 @@ font-style: normal;
     border-radius: 30px;
     margin-top: 20px;
     border-width: 0px;
-    box-shadow: 
-    8px 8px 16px rgb(152, 127, 129), 
-    -8px -8px 16px    rgb(232, 199, 201);
+ 
 }
 
 
@@ -262,9 +247,7 @@ font-style: normal;
     border-radius: 30px;
     margin-top: 20px;
     border-width: 0px;
-    box-shadow: 
-    8px 8px 16px rgb(138, 125, 102), 
-    -8px -8px 16px    rgb(215, 194, 158);
+    
 }
 
 .title{
@@ -459,8 +442,115 @@ font-style: normal;
         margin: auto;
     } */
     
+.btn-record {
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    width: 250px ; 
+    height:150px;
+    margin: auto;
+    margin-top: 10vh;
 
+}
 
+/* The switch - the box around the slider */
+
+.off{
+    /* position: absolute;; */
+    text-align: center;
+    margin-top: 120px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.911);
+    
+}
+
+.on{
+    /* position: absolute;; */
+    text-align: center;
+    margin:auto;
+    margin-top: 50px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+   
+    color: rgba(255, 255, 255, 0.658);
+    
+}
+
+.switch {
+    position: relative;
+    margin-bottom: 14vh;
+    margin-top: 13vh;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity:0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: relative;
+    cursor: pointer;
+    width: 180px ; 
+    height:280px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(76, 77, 84, 0);
+    -webkit-transition: .6s;
+    transition: .6s;
+    box-shadow: 
+    inset 5px 5px 10px rgba(37, 37, 37, 0.582),
+    inset -5px -5px 10px rgba(247, 245, 245, 0.425);
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 158px;
+    width: 158px;
+    left: 12px;
+    top: 12px;
+    background-color: #f1f1f1;
+    box-shadow: 
+    5px 5px 10px rgba(37, 37, 37, 0.582);
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider::before {
+    background-color: #CB5A5C;
+  }
+
+  input:checked + .slider {
+    background-color: rgb(128, 51, 52);;
+  }
+  
+  /* input:focus + .slider {
+    box-shadow: 
+    inset -5px -5px 10px rgba(247, 245, 245, 0.589),
+    inset 5px 5px 10px rgba(37, 37, 37, 0.582);
+    
+  }
+   */
+  input:checked + .slider:before {
+    -webkit-transform: translateY(27%);
+    -ms-transform: translateY(27%);
+    transform: translateY(60%);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 100px;
+  }
+  
+  .slider.round:before {
+    border-radius: 100px;
+  }
     
 
 

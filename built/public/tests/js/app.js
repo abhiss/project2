@@ -101,7 +101,7 @@ class App {
     const newIdx = this.recordingsCont.childNodes.length + 1
 
     const newEl = document.createElement('div')
-    newEl.innerHTML = '<audio id="audio-recording-' + newIdx + '" controls style="width:200px; height: 40px; margin:auto;"></audio>'
+    newEl.innerHTML = '<audio id="audio-recording-' + newIdx + '" controls style="width:250px; height: 40px; margin:auto;"></audio>'
     this.recordingsCont.appendChild(newEl)
     console.log('test')
 
