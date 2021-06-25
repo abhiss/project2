@@ -8,9 +8,6 @@
         "lib": [
             "es6"
         ],
-        "types": [
-            "node"
-        ]
         //"allowSyntheticDefaultImports": true
         //"outFile": "./built/local/tsc.js"
         // "sourceMap": true
