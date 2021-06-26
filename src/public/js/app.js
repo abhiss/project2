@@ -11,8 +11,6 @@ class App {
 
         this.isRecording = false
         this.saveNextRecording = false
-
-        this.debugTxt.innerHTML = "stopped"
     }
 
     init() {

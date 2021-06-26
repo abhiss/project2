@@ -8,7 +8,28 @@
 
     <link rel="shortcut icon" href="images/hy_fav.png" />
 
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
 
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-storage.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyDepw0Uv63bI8NEDE6X35Hep95fHY3QUss",
+            authDomain: "hey-you-project.firebaseapp.com",
+            projectId: "hey-you-project",
+            storageBucket: "hey-you-project.appspot.com",
+            messagingSenderId: "1064507378913",
+            appId: "1:1064507378913:web:7941057512ca4793abfba0"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -18,7 +39,7 @@
 
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-    
+
     <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
@@ -40,16 +61,17 @@
             <div id="signin" role="tabpanel">
                 <form id="signin-form">
                     <div class="form-container">
-                        <input type="text" id="username-input-signin" class="cat_box" placeholder="enter your email"
+                        <!-- <input type="text" id="username-input-signin" class="cat_box" placeholder="enter your email"
                             style="color:#4C4D54; margin-top: 5vmin; background-color: white;">
                         <input type="password" id="password-input-signin" class="cat_box" placeholder="password"
                             style="color:#4C4D54; margin-top: 5vmin; background-color: white;">
-                        <br>
+                        <br> -->
+                        <hr width="200px">
+
                         <button type="submit" id="signup-btn"
-                            class="btn btn-outline-light som_button_bar btn_shadow">sign-in</button>
+                            class="btn btn-outline-light som_button_bar btn_shadow" style="margin-top: 20vh;">Sign in with Google.</button>
                         <br>
                         <hr width="200px">
-                        <p id="newaccount" class="sub_title"><a href="signup.html">create an account</a></p>
 
                     </div>
                     <div>
@@ -65,20 +87,7 @@
             </div>
         </div>
     </div>
-
-
-    <script type="text/javascript">
-
-
-        document.getElementById("newaccount").onclick = function () {
-            location.href = "signup.html";
-        };
-
-
-    </script>
-    <script src="/js/signin.js">
-
-    </script>
+    <script src="/js/signin.js" defer></script>
 
 
 </body>

@@ -6,11 +6,15 @@ const { secret } = require("../config/keys");
 // const withAuth = require("../routes/auth");
 
 const withAuth = (req, res, next) => {
-    if (!req.session.userId) {
-        res.redirect("/");
-    } else {
-        next();
-    }
+
+    // todo - replace with firebase auth
+    // if (!req.session.userId) {
+    //     res.redirect("/");
+    // } else {
+    //     next();
+    // }
+
+    next();
 };
 
 export default function (app: express.Application) {
@@ -19,11 +23,9 @@ export default function (app: express.Application) {
     });
 
     app.get("/home", withAuth, (req, res) => {
-        if (!req.session.userId) {
-            res.redirect("/");
-        } else {
-            res.sendFile(path.join(__dirname + "/../public/home.html"))
-        }
+
+        res.sendFile(path.join(__dirname + "/../public/home.html"))
+
     });
 
     app.get("/text", (req, res) => {
@@ -99,42 +101,19 @@ export default function (app: express.Application) {
     app.post("/signin", (req, res) => {
         const email = req.body.email;
         const password = req.body.password;
-        User.findOne({ where: { email } }).then(user => {
-            if (!user) {
-                let errors: { email: string; };
-                errors.email = "No Account Found";
-                return res.status(404).json(errors);
-            }
-            bcrypt.compare(password, user.password).then(isMatch => {
-                if (isMatch) {
-                    console.log("in")
-                    const payload = {
-                        id: user.id,
-                        username: user.username
-                    };
-                    req.session.userId = payload.id;
-                    req.session.username = payload.username;
-                    res.status(200).json(payload.id);
-                } else {
-                    let errors = {
-                        password: ''
-                    };
-                    errors.password = "Password is incorrect";
-                    res.status(500).json(errors);
-                }
-            });
-        });
+
+
     });
 
-    app.post("/signout", (req, res) => {
-        if (req.session) {
-            req.session.destroy(i => { });
-            res.sendStatus(204).send("User has been logged out");
-            // req.session.cookie.expires = new Date().getTime();
-        } else {
-            res.sendStatus(404).send("User not signed in");
-        }
-    });
+    // app.post("/signout", (req, res) => {
+    //     if (req.session) {
+    //         req.session.destroy(i => { });
+    //         res.sendStatus(204).send("User has been logged out");
+    //         // req.session.cookie.expires = new Date().getTime();
+    //     } else {
+    //         res.sendStatus(404).send("User not signed in");
+    //     }
+    // });
 
     app.delete("/user/:id", (req, res) => {
         User.destroy({

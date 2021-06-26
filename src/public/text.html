@@ -8,7 +8,28 @@
 
     <link rel="shortcut icon" href="images/hy_fav.png" />
 
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
 
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-storage.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyDepw0Uv63bI8NEDE6X35Hep95fHY3QUss",
+            authDomain: "hey-you-project.firebaseapp.com",
+            projectId: "hey-you-project",
+            storageBucket: "hey-you-project.appspot.com",
+            messagingSenderId: "1064507378913",
+            appId: "1:1064507378913:web:7941057512ca4793abfba0"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
