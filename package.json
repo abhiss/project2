@@ -3,7 +3,6 @@
   "version": "0.0.1",
   "description": "",
   "main": "server.js",
-  "type": "module",
   "scripts": {
     "abuild": "python helper.py && tsc",
     "start": "python helper.py && tsc && node ./built/server.js",
